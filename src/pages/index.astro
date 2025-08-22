@@ -1,0 +1,277 @@
+---
+/* Sin imports: imágenes servidas desde /public */
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Landing Salud</title>
+    <style>
+      :root{
+        --blue: #1e3a8a;
+        --light-sky: #eaf6ff;
+        --fade-duration: 800ms;
+        --text-shadow: 0 1px 2px rgba(0,0,0,0.25);
+      }
+
+      *{ box-sizing: border-box; }
+      html, body { height: 100%; }
+      body{
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+        color: #0b1220;
+        background: #fff;
+        overflow-x: hidden;
+        scroll-snap-type: y proximity; /* opcional */
+      }
+
+      /* Sección full-screen con animación */
+      .section{
+        position: relative;
+        min-height: 100vh;
+        width: 100%;
+        display: grid;
+        place-items: center;
+        padding: 4rem 1.5rem;
+        text-align: center;
+
+        opacity: 0;
+        transform: translateY(16px);
+        transition: opacity var(--fade-duration) ease, transform var(--fade-duration) ease;
+        will-change: opacity, transform;
+
+        scroll-snap-align: start;
+        isolation: isolate; /* evita que overlays tapen otras secciones */
+      }
+
+      /* Fondo con imagen + estilo watermark */
+      .bg-image{
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        filter: grayscale(10%) contrast(90%) brightness(95%);
+      }
+
+      /* Overlay uniforme tipo velo para legibilidad (watermark) */
+      .bg-image::before{
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom, rgba(255,255,255,0.70), rgba(255,255,255,0.70));
+        backdrop-filter: blur(1px);
+        z-index: 0;
+      }
+
+      /* Overrides por sección (afinados según las imágenes) */
+      #portada.bg-image::before{      background: rgba(255,255,255,0.50); }
+      #introduccion.bg-image::before{ background: rgba(255,255,255,0.70); }
+      #conclusiones.bg-image::before{ background: rgba(255,255,255,0.70); }
+
+      /* Contenido por encima del overlay */
+      .content{
+        position: relative;
+        z-index: 1;
+        max-width: 72ch;
+        display: grid;
+        gap: 1rem;
+      }
+
+      .section.is-visible{
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Títulos identificadores de cada div */
+      .section h1.section-label{
+        margin: 0;
+        font-size: clamp(1rem, 2.2vw, 1.1rem);
+        font-weight: 700;
+        color: #334155;
+        opacity: 0.95;
+        letter-spacing: 0.02em;
+      }
+
+      /* Título principal (Portada) en 2 líneas y azul */
+      .title{
+        color: var(--blue);
+        font-weight: 800;
+        letter-spacing: -0.01em;
+        line-height: 1.1;
+        font-size: clamp(2rem, 6vw, 4rem);
+        margin: 0;
+        max-width: 20ch;
+        margin-left: auto;
+        margin-right: auto;
+        text-shadow: var(--text-shadow);
+      }
+
+      .text{
+        font-size: clamp(1rem, 2.2vw, 1.2rem);
+        line-height: 1.65;
+        margin: 0 auto;
+        color: #0b1220;
+        max-width: 72ch;
+      }
+
+      /* Fondos por sección */
+      #portada{      background-image: url('/landing_salud/images/portada.jpg'); }
+      #introduccion{ background-image: url('/landing_salud/images/introduccion.jpg'); }
+      #dato2{        background: var(--light-sky); }
+      #conclusiones{ background-image: url('/landing_salud/images/conclusion.jpg'); }
+
+      /* Mejora de legibilidad del texto sobre imágenes */
+      #portada .content,
+      #introduccion .content,
+      #conclusiones .content{
+        text-shadow: var(--text-shadow);
+      }
+
+      /* Estilos del contador */
+      .counter-wrap{
+        display: grid;
+        place-items: center;
+        gap: 0.35rem;
+        margin-top: 0.25rem;
+      }
+      .counter-value{
+        font-size: clamp(1.6rem, 5.2vw, 2.4rem);
+        font-weight: 800;
+        color: #1e3a8a;
+        letter-spacing: -0.02em;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+      }
+      .counter-subtitle{
+        font-size: 0.95rem;
+        color: #475569;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Portada -->
+    <section class="section bg-image" id="portada" role="region" aria-label="Portada">
+      <div class="content">
+        <h1 class="section-label">Portada</h1>
+        <h2 class="title">Te has preguntado<br />hasta cuando vas a vivir?</h2>
+    </section>
+
+    <!-- Introducción -->
+    <section class="section bg-image" id="introduccion" role="region" aria-label="Introducción">
+      <div class="content">
+        <h1 class="section-label">Introducción</h1>
+        <p class="text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus dapibus, nunc at ultricies vulputate, massa urna dictum eros, non aliquam lorem lectus quis dui. Sed fermentum, arcu at volutpat ullamcorper, quam nulla lacinia lorem, non suscipit orci ex vitae augue.
+        </p>
+
+        <!-- Contador -->
+        <div class="counter-wrap">
+          <span class="counter-value" data-target="72.10">0,00%</span>
+          <div class="counter-subtitle">Participación</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dato 2 -->
+    <section class="section" id="dato2" role="region" aria-label="Dato 2">
+      <div class="content">
+        <h1 class="section-label">Dato 2</h1>
+        <p class="text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere, mi id aliquet luctus, augue metus molestie nisi, id dignissim urna sapien sed odio. Ut tempor, augue non scelerisque euismod, tellus mi luctus metus, vitae tincidunt arcu magna in nibh.
+        </p>
+
+        <!-- Contador -->
+        <div class="counter-wrap">
+          <span class="counter-value" data-target="45.00">0,00%</span>
+          <div class="counter-subtitle">Avance</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Conclusiones -->
+    <section class="section bg-image" id="conclusiones" role="region" aria-label="Conclusiones">
+      <div class="content">
+        <h1 class="section-label">Conclusiones</h1>
+        <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in luctus sem, a fermentum augue. Suspendisse potenti.</p>
+        <p class="text">Curabitur facilisis, augue vel varius feugiat, dui diam tincidunt nisi, nec gravida tortor justo sed nunc. Integer at faucibus lectus.</p>
+        <p class="text">Praesent ut dui ac tortor ultricies volutpat. Proin in urna eu velit hendrerit gravida a sit amet ipsum.</p>
+
+        <!-- Contador -->
+        <div class="counter-wrap">
+          <span class="counter-value" data-target="88.90">0,00%</span>
+          <div class="counter-subtitle">Satisfacción</div>
+        </div>
+      </div>
+    </section>
+
+    <script is:inline>
+      // Fade bidireccional: aparece al entrar, desaparece al salir
+      const sections = Array.from(document.querySelectorAll('.section'));
+
+      const onIntersect = (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          } else {
+            entry.target.classList.remove('is-visible');
+          }
+        });
+      };
+
+      const observer = new IntersectionObserver(onIntersect, {
+        root: null,
+        rootMargin: '0px 0px -20% 0px',
+        threshold: 0.15
+      });
+
+      sections.forEach(sec => observer.observe(sec));
+
+      // -------- Contadores --------
+      function formatPercent(val, decimals = 2) {
+        return val.toFixed(decimals).replace('.', ',') + '%';
+      }
+
+      function animateCounter(el, endValue, {
+        startValue = 0,
+        duration = 1500,
+        decimals = 2,
+        easing = 'easeOutCubic'
+      } = {}) {
+        const easings = {
+          linear: t => t,
+          easeOutCubic: t => 1 - Math.pow(1 - t, 3),
+          easeOutQuart: t => 1 - Math.pow(1 - t, 4),
+          easeOutQuint: t => 1 - Math.pow(1 - t, 5)
+        };
+        const ease = easings[easing] || easings.easeOutCubic;
+
+        let startTs = null;
+        function step(ts) {
+          if (!startTs) startTs = ts;
+          const progress = Math.min((ts - startTs) / duration, 1);
+          const eased = ease(progress);
+          const current = startValue + (endValue - startValue) * eased;
+          el.textContent = formatPercent(current, decimals);
+          if (progress < 1) requestAnimationFrame(step);
+          else el.textContent = formatPercent(endValue, decimals);
+        }
+        requestAnimationFrame(step);
+      }
+
+      // Observa cada .section y anima todos los contadores internos al entrar
+      const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            const counters = e.target.querySelectorAll('.counter-value:not([data-animated])');
+            counters.forEach(el => {
+              el.setAttribute('data-animated', 'true');
+              const target = parseFloat(el.dataset.target || '0');
+              animateCounter(el, target, { duration: 1600, decimals: 2, easing: 'easeOutQuint' });
+            });
+          }
+        });
+      }, { threshold: 0.35 });
+
+      sections.forEach(sec => counterObserver.observe(sec));
+    </script>
+  </body>
+</html>
