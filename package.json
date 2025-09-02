@@ -2,6 +2,7 @@
   "name": "landing-salud",
   "type": "module",
   "version": "0.0.1",
+  "homepage": "https://arturocueva81.github.io/landing-salud/",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",

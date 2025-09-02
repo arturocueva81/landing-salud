@@ -1,8 +1,8 @@
 import { defineConfig } from 'astro/config'
 
 export default defineConfig({
-  site: 'https://astronaut.github.io',
-  base: 'mi-repo',
+  site: 'https://arturocueva81.github.io',
+  base: '/landing-salud/',
 })
 
 
