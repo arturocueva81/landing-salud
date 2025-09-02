@@ -1,7 +1,15 @@
-// astro.config.mjs
-import { defineConfig } from 'astro/config';
+import { defineConfig } from 'astro/config'
 
 export default defineConfig({
-  site: 'https://arturocueva81.github.io',
-  base: '/landing-salud/',
-});
+  site: 'https://astronaut.github.io',
+  base: 'mi-repo',
+})
+
+
+//import { defineConfig } from 'astro/config';
+
+//export default defineConfig({
+  //experimental: {
+    //viewTransitions: true
+  //}
+//});

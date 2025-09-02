@@ -1,277 +1,735 @@
 ---
-/* Sin imports: imágenes servidas desde /public */
+import '../styles.css';
 ---
 
 <html lang="es">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Landing Salud</title>
-    <style>
-      :root{
-        --blue: #1e3a8a;
-        --light-sky: #eaf6ff;
-        --fade-duration: 800ms;
-        --text-shadow: 0 1px 2px rgba(0,0,0,0.25);
-      }
-
-      *{ box-sizing: border-box; }
-      html, body { height: 100%; }
-      body{
-        margin: 0;
-        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-        color: #0b1220;
-        background: #fff;
-        overflow-x: hidden;
-        scroll-snap-type: y proximity; /* opcional */
-      }
-
-      /* Sección full-screen con animación */
-      .section{
-        position: relative;
-        min-height: 100vh;
-        width: 100%;
-        display: grid;
-        place-items: center;
-        padding: 4rem 1.5rem;
-        text-align: center;
-
-        opacity: 0;
-        transform: translateY(16px);
-        transition: opacity var(--fade-duration) ease, transform var(--fade-duration) ease;
-        will-change: opacity, transform;
-
-        scroll-snap-align: start;
-        isolation: isolate; /* evita que overlays tapen otras secciones */
-      }
-
-      /* Fondo con imagen + estilo watermark */
-      .bg-image{
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        filter: grayscale(10%) contrast(90%) brightness(95%);
-      }
-
-      /* Overlay uniforme tipo velo para legibilidad (watermark) */
-      .bg-image::before{
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(to bottom, rgba(255,255,255,0.70), rgba(255,255,255,0.70));
-        backdrop-filter: blur(1px);
-        z-index: 0;
-      }
-
-      /* Overrides por sección (afinados según las imágenes) */
-      #portada.bg-image::before{      background: rgba(255,255,255,0.50); }
-      #introduccion.bg-image::before{ background: rgba(255,255,255,0.70); }
-      #conclusiones.bg-image::before{ background: rgba(255,255,255,0.70); }
-
-      /* Contenido por encima del overlay */
-      .content{
-        position: relative;
-        z-index: 1;
-        max-width: 72ch;
-        display: grid;
-        gap: 1rem;
-      }
-
-      .section.is-visible{
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      /* Títulos identificadores de cada div */
-      .section h1.section-label{
-        margin: 0;
-        font-size: clamp(1rem, 2.2vw, 1.1rem);
-        font-weight: 700;
-        color: #334155;
-        opacity: 0.95;
-        letter-spacing: 0.02em;
-      }
-
-      /* Título principal (Portada) en 2 líneas y azul */
-      .title{
-        color: var(--blue);
-        font-weight: 800;
-        letter-spacing: -0.01em;
-        line-height: 1.1;
-        font-size: clamp(2rem, 6vw, 4rem);
-        margin: 0;
-        max-width: 20ch;
-        margin-left: auto;
-        margin-right: auto;
-        text-shadow: var(--text-shadow);
-      }
-
-      .text{
-        font-size: clamp(1rem, 2.2vw, 1.2rem);
-        line-height: 1.65;
-        margin: 0 auto;
-        color: #0b1220;
-        max-width: 72ch;
-      }
-
-      /* Fondos por sección */
-      #portada{      background-image: url('/landing_salud/images/portada.jpg'); }
-      #introduccion{ background-image: url('/landing_salud/images/introduccion.jpg'); }
-      #dato2{        background: var(--light-sky); }
-      #conclusiones{ background-image: url('/landing_salud/images/conclusion.jpg'); }
-
-      /* Mejora de legibilidad del texto sobre imágenes */
-      #portada .content,
-      #introduccion .content,
-      #conclusiones .content{
-        text-shadow: var(--text-shadow);
-      }
-
-      /* Estilos del contador */
-      .counter-wrap{
-        display: grid;
-        place-items: center;
-        gap: 0.35rem;
-        margin-top: 0.25rem;
-      }
-      .counter-value{
-        font-size: clamp(1.6rem, 5.2vw, 2.4rem);
-        font-weight: 800;
-        color: #1e3a8a;
-        letter-spacing: -0.02em;
-        text-shadow: 0 1px 2px rgba(0,0,0,0.1);
-      }
-      .counter-subtitle{
-        font-size: 0.95rem;
-        color: #475569;
-      }
-    </style>
+    <title>Egresos Pacientes Ecuador 2024</title>
   </head>
   <body>
+    <header class="site-header" role="navigation" aria-label="Menú principal">
+      <div class="nav-wrap">
+        <div class="brand">Análisis de Egresos Hospitalarios - Ecuador 2024</div>
+        <nav class="nav" aria-label="Secciones">
+          <a href="#home" data-nav>Home</a>
+          <a href="#contexto" data-nav>Contexto</a>
+          <a href="#datos" data-nav>Datos</a>
+          <a href="#metodologia" data-nav>Metodología</a>
+          <a href="#powerbi" data-nav>Power BI</a>
+          <a href="#acerca" data-nav>Acerca de nosotros</a>
+        </nav>
+      </div>
+    </header>
+
     <!-- Portada -->
-    <section class="section bg-image" id="portada" role="region" aria-label="Portada">
-      <div class="content">
-        <h1 class="section-label">Portada</h1>
-        <h2 class="title">Te has preguntado<br />hasta cuando vas a vivir?</h2>
+    <section class="section bg-image" id="home" role="region" aria-label="Home">
+      <div class="content one-col">
+        <h1 class="title">¿Te has preguntado<br />hasta cuándo vas a vivir?</h1>
+      </div>
     </section>
 
-    <!-- Introducción -->
-    <section class="section bg-image" id="introduccion" role="region" aria-label="Introducción">
-      <div class="content">
-        <h1 class="section-label">Introducción</h1>
-        <p class="text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus dapibus, nunc at ultricies vulputate, massa urna dictum eros, non aliquam lorem lectus quis dui. Sed fermentum, arcu at volutpat ullamcorper, quam nulla lacinia lorem, non suscipit orci ex vitae augue.
+    <!-- Contexto -->
+    <section class="section bg-image" id="contexto" role="region" aria-label="Contexto">
+      <div class="content data-grid content-block">
+        <h1 class="section-label">Contexto</h1>
+
+          <div class="row-full">
+            <div class="fullwidth-card liquid-glass">
+              <div class="fullwidth-card-body intro-two-col">
+                <div class="intro-text">
+                  <h2 class="text-title">Introducción</h2>
+                  <p class="text">
+                    Esta visualización sintetiza los Egresos Hospitalarios 2024 en Ecuador para ofrecer un panorama 
+                    rápido y comparativo del uso de los servicios de hospitalización. Un egreso hospitalario es la 
+                    salida de un paciente tras concluir un episodio de hospitalización —ya sea por alta, traslado, 
+                    abandono o defunción— y representa un episodio, no una persona única; por ello, una misma persona 
+                    puede registrar varios egresos en el año.
+                    El contenido se organiza en tres ejes principales. Primero, las magnitudes por provincia y su 
+                    distribución entre áreas urbana y rural, asegurando que el total corresponda a la suma de ambas; 
+                    esto permite ubicar dónde se concentra la demanda y reconocer brechas territoriales. 
+                    Segundo, las principales causas de egreso, que ayudan a identificar diagnósticos con mayor carga 
+                    asistencial y orientar acciones clínicas y preventivas. Tercero, la composición por tipo de seguro, 
+                    clave para comprender patrones de acceso y cobertura dentro del sistema de salud.
+                    La utilidad de esta visualización radica en que facilita la planificación de recursos 
+                    (camas, personal e insumos) y la priorización de intervenciones, a la vez que mejora la lectura 
+                    comparativa mediante gráficos claros, etiquetas legibles y opciones de interacción. 
+                    Se sugiere comenzar por el panorama provincial (Total, Urbana y Rural) y luego explorar causas y seguros, 
+                    interpretando los resultados junto con la población y la oferta de servicios para lograr un análisis equilibrado.
+                  </p>
+                </div>
+
+                <figure class="intro-image" aria-label="Mapa de Ecuador (ilustración)">
+                  <img src="/images/equateur03.svg" alt="Mapa ilustrativo de Ecuador" />
+                </figure>
+              </div>
+              <div class="inner-glow"></div>
+            </div>
+          </div>
+
+        <div class="data-row">
+          <div class="viz-col">
+            <div class="chart-container liquid-glass" id="chart-contexto-1" aria-label="Gráfico Contexto 1">
+              <div class="placeholder">Gráfico Contexto 1</div>
+              <div class="inner-glow"></div>
+            </div>
+            <div class="chart-source">Fuente: fuente de datos1</div>
+          </div>
+          <div class="text-col">
+            <h2 class="text-title">Panorama global de EVS</h2>
+            <p class="text">La EVS estima cuántos años se vive con buena salud, integrando la duración 
+              de la vida con el tiempo afectado por enfermedad o discapacidad. A escala global, 
+              las regiones con mayor inversión en atención primaria, vacunación, control de enfermedades 
+              crónicas y protección social alcanzan EVS más altas; en contraste, las limitaciones en acceso 
+              a servicios, agua segura, nutrición y educación reducen este indicador.
+              Las diferencias entre continentes y países reflejan tanto la capacidad de prevenir y 
+              tratar oportunamente como las condiciones ambientales y económicas. Observar la EVS, 
+              junto con la esperanza de vida total, permite detectar brechas de bienestar, orientar 
+              recursos hacia intervenciones costo-efectivas y monitorear el impacto de las políticas 
+              de salud pública en la calidad de vida, no solo en su duración.</p>
+            <div class="counter-group">
+              <!-- Ejemplo de porcentaje: incluye % en data-target -->
+              <div class="counter-wrap">
+                <span class="counter-value" data-target="64,30" data-decimals="1">0</span>
+                <div class="counter-subtitle">Índice EVS Ecuador</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="viz-col">
+            <div class="chart-container liquid-glass" id="chart-contexto-2" aria-label="Gráfico Contexto 2">
+              <div class="placeholder">Gráfico Contexto 2</div>
+              <div class="inner-glow"></div>
+            </div>
+            <div class="chart-source">Fuente: fuente de datos1</div>
+          </div>
+          <div class="text-col">
+            <h2 class="text-title">Tendencias históricas de EVS en Ecuador</h2>
+            <p class="text">Desde 1950, la EVS en Ecuador crece de forma sostenida. Los mayores avances iniciales 
+              (años 50–70) se explican por vacunación, control de infecciones, saneamiento y caída de la mortalidad 
+              infantil. Entre 1980 y 2000 el aumento continúa, pero con transición hacia enfermedades crónicas no 
+              transmisibles (ECNT), lo que exige prevenir y gestionar riesgos (dieta, actividad física, tabaquismo). 
+              En los 2000–2010, la expansión de coberturas, infraestructura y programas preventivos impulsa la 
+              EVS pese a retos de envejecimiento y urbanización. Sin embargo, aún persisten brechas que requieren ser atendidas por 
+              el Estado. </p>
+            <div class="counter-group">
+              <!-- Ejemplo de número decimal: sin % en data-target -->
+              <div class="counter-wrap">
+                <span class="counter-value" data-target="30,35" data-decimals="2">0</span>
+                <div class="counter-subtitle">Variacion de la EVS Ecuador desde 1950 (años)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Datos -->
+    <section class="section bg-image" id="datos" role="region" aria-label="Datos">
+      <div class="content data-grid content-block">
+        <h1 class="section-label">Datos</h1>
+
+        <div class="data-row">
+          <div class="viz-col">
+            <div class="chart-container liquid-glass" id="chart-datos-1" aria-label="Tipos de Seguro (Pie)">
+              <div class="placeholder">Cargando gráfico…</div>
+              <div class="inner-glow"></div>
+            </div>
+            <div class="chart-source">Fuente: fuente de datos1</div>
+          </div>
+          <div class="text-col">
+            <h2 class="text-title">Cobertura de seguro de salud</h2>
+            <p class="text">La cobertura de seguro de salud refleja qué proporción de la población accede a 
+              servicios mediante seguros públicos o privados. Una mayor cobertura se asocia con atención oportuna, 
+              protección financiera y mejores resultados en salud. Sin embargo, persisten brechas entre áreas 
+              urbanas y rurales y entre grupos socioeconómicos. Para mejorarla se requieren: ampliación de afiliación, 
+              reducción de barreras de costo, integración de redes públicas–privadas y fortalecimiento de la atención primaria y preventiva.</p>
+            <div class="counter-group">
+              <!-- Mixto: porcentaje y número -->
+              <div class="counter-wrap">
+                <span class="counter-value" data-target="61,31%" data-decimals="2">0</span>
+                <div class="counter-subtitle">Egresos que No Tienen Seguro</div>
+              </div>
+              <div class="counter-wrap">
+                <span class="counter-value" data-target="5,53%" data-decimals="2">0</span>
+                <div class="counter-subtitle">Egresos que cuentan con un Seguro Privado</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Texto full width egresos -->
+<div class="row-full">
+  <div class="fullwidth-card liquid-glass">
+    <div class="fullwidth-card-body intro-two-col intro-two-col--img-right">
+      <!-- Texto IZQUIERDA -->
+      <div class="intro-col intro-col--text">
+        <h2 class="text-title">Egresos por provincia</h2>
+        <p class="text" style="margin-bottom:10px;">
+          El análisis por provincia y por área (Urbana/Rural) permite identificar dónde se concentra la demanda hospitalaria y cómo se distribuye territorialmente. Comparar los egresos totales con los de zonas urbanas y rurales revela brechas de acceso, diferencias en perfil epidemiológico y necesidades de recursos. Esta lectura orienta la planificación de camas, personal e insumos, y prioriza intervenciones preventivas y de referencia según la realidad de cada territorio.
         </p>
 
-        <!-- Contador -->
-        <div class="counter-wrap">
-          <span class="counter-value" data-target="72.10">0,00%</span>
-          <div class="counter-subtitle">Participación</div>
+        <div class="counter-group">
+          <div class="counter-wrap">
+            <span class="counter-value" data-target="269152" data-decimals="0">0</span>
+            <div class="counter-subtitle">Egresos Urbanos en Guayas</div>
+          </div>
+          <div class="counter-wrap">
+            <span class="counter-value" data-target="20443" data-decimals="2">0</span>
+            <div class="counter-subtitle">Egresos rurales en Pichincha</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Imagen DERECHA -->
+      <figure class="intro-col intro-col--image intro-image">
+        <div class="intro-image-frame">
+          <img src="/images/urbano_rural.jpg" alt="urbano_rural" />
+        </div>
+      </figure>
+    </div>
+    <div class="inner-glow"></div>
+  </div>
+</div>
+
+        <!-- Botones y gráfico (alto aumentado para etiquetas) -->
+        <div class="row-full">
+          <div class="viz-col" style="width:100%;max-width:none;">
+            <div id="egresos-buttons" class="btn-row" style="display:flex;gap:8px;justify-content:center;margin:6px 0 10px 0;">
+              <button type="button" class="seg-btn" data-key="Total">Total</button>
+              <button type="button" class="seg-btn" data-key="Urbana">Urbana</button>
+              <button type="button" class="seg-btn" data-key="Rural">Rural</button>
+            </div>
+
+            <div class="chart-container liquid-glass full-bleed" id="chart-datos-2" aria-label="Egresos por provincia (barras)" style="min-height:760px;">
+              <div class="inner-glow"></div>
+            </div>
+            <div class="chart-source">Fuente: egresos_prov_canton_parroquia_area.json</div>
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="viz-col">
+            <div class="chart-container liquid-glass" id="chart-datos-3" aria-label="Gráfico Datos 3">
+              <div class="placeholder">Gráfico 3</div>
+              <div class="inner-glow"></div>
+            </div>
+            <div class="chart-source">Fuente: fuente de datos1</div>
+          </div>
+          <div class="text-col">
+            <h2 class="text-title">Principales causas de egreso</h2>
+            <p class="text">Las principales causas de egreso muestran qué diagnósticos concentran la mayor carga asistencial. 
+              Al analizarlas por sexo y grupo etario se identifican patrones (por ejemplo, traumatismos en hombres jóvenes, 
+              causas obstétricas en mujeres, y enfermedades crónicas en adultos mayores). Esta información permite focalizar
+               prevención, reforzar capacidades clínicas y optimizar recursos en servicios con mayor demanda, 
+               reduciendo reingresos y estancias prolongadas.</p>
+            <div class="counter-group">
+              <div class="counter-wrap">
+                <span class="counter-value" data-target="242769" data-decimals="0">0</span>
+                <div class="counter-subtitle">MUJERES: Maternindad y embarazo</div>
+              </div>
+              <div class="counter-wrap">
+                <span class="counter-value" data-target="89336" data-decimals="0">0</span>
+                <div class="counter-subtitle">HOMBRES: Traumatismos/Envenenamiento</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Metodología -->
+    <section class="section bg-image" id="metodologia" role="region" aria-label="Metodología">
+      <div class="content two-col fullwidth">
+        <div class="viz-col">
+            <div class="chart-container liquid-glass" aria-label="Gráfico Metodología">
+              <img src="/images/ciclo_eda.jpg" alt="Ciclo de EDA" class="chart-img" loading="lazy" />
+              <div class="inner-glow"></div>
+            </div>
+            <div class="chart-source">Fuente: fuente de datos1</div>
+          </div>
+        <div class="text-col">
+          <h1 class="section-label">Metodología</h1>
+          <h2 class="text-title">Cómo construimos los indicadores</h2>
+          <p class="text">El proceso de recopilacion y procesamiento de datos fue el siguiente:</p>
+            <ul>
+              <li><strong>Definición y alcance:</strong> precisamos cada indicador (p. ej., egresos, EVS, cobertura) y su unidad de medida.</li>
+              <li><strong>Fuentes de datos:</strong> utilizamos registros administrativos y censos/encuestas oficiales; documentamos fecha de corte y calidad.</li>
+              <li><strong>Limpieza y preparación:</strong> estandarizamos nombres (provincias/áreas), tratamos valores faltantes y atípicos, y unificamos formatos numéricos.</li>
+              <li><strong>Cálculo:</strong> aplicamos fórmulas consistentes (tasas por 100.000 hab., proporciones, promedios ponderados). Para EVS usamos series históricas por sexo.</li>
+              <li><strong>Desagregación:</strong> generamos vistas por provincia y área (Urbana/Rural), y cuando es pertinente por sexo y grupo etario.</li>
+              <li><strong>Validación:</strong> verificamos que Total = Urbana + Rural y que los totales provinciales coincidan con agregados nacionales.</li>
+              <li><strong>Visualización:</strong> elegimos gráficos adecuados (barras, pie, líneas, mapas), añadimos etiquetas legibles y porcentajes para facilitar interpretación.</li>
+              <li><strong>Documentación y reproducibilidad:</strong> registramos supuestos, versiones de datos y scripts para asegurar transparencia y replicabilidad.</li>
+            </ul>
+          <div class="counter-wrap">
+            <span class="counter-value" data-target="1132667" data-decimals="0">0</span>
+            <div class="counter-subtitle">Registros procesados</div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Dato 2 -->
-    <section class="section" id="dato2" role="region" aria-label="Dato 2">
-      <div class="content">
-        <h1 class="section-label">Dato 2</h1>
-        <p class="text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere, mi id aliquet luctus, augue metus molestie nisi, id dignissim urna sapien sed odio. Ut tempor, augue non scelerisque euismod, tellus mi luctus metus, vitae tincidunt arcu magna in nibh.
-        </p>
-
-        <!-- Contador -->
-        <div class="counter-wrap">
-          <span class="counter-value" data-target="45.00">0,00%</span>
-          <div class="counter-subtitle">Avance</div>
+    <!-- Power BI -->
+    <section class="section bg-image" id="powerbi" role="region" aria-label="Power BI">
+      <div class="content two-col fullwidth">
+        <div class="viz-col">
+          <div class="qr-container">
+            <img src="/images/qr_final.jpg" alt="Código QR Power BI" class="qr-image" />
+          </div>
+          <div class="chart-source">Fuente: fuente de datos1</div>
+        </div>
+        <div class="text-col">
+          <h1 class="section-label">Power BI</h1>
+          <h2 class="text-title">Explora el tablero completo</h2>
+          <p class="text">Puedes ingresar a revisar la documentación, archivos CSV y tablero de Power BI a traves de nuestro código QR para visualizar con mayor de talle todas las variables que se consideraron en este estudio. 
+            <p>Puedes entrar los siguientes enlaces:</p>
+            <a>Archivos Base</a>
+            <a>Documentación Complementaria</a> 
+            <a href=https://app.powerbi.com/view?r=eyJrIjoiN2RjMWYzY2YtMDMzZC00ZDljLWEyY2YtODM2OTA0YmQwZDAxIiwidCI6IjY4MmE0ZTZhLWE3N2YtNDk1OC1hM2FjLTllMjY2ZDE4YWEzNyIsImMiOjR9>Enlace POWER BI
+            </a>
+            </p>
         </div>
       </div>
     </section>
 
-    <!-- Conclusiones -->
-    <section class="section bg-image" id="conclusiones" role="region" aria-label="Conclusiones">
-      <div class="content">
-        <h1 class="section-label">Conclusiones</h1>
-        <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in luctus sem, a fermentum augue. Suspendisse potenti.</p>
-        <p class="text">Curabitur facilisis, augue vel varius feugiat, dui diam tincidunt nisi, nec gravida tortor justo sed nunc. Integer at faucibus lectus.</p>
-        <p class="text">Praesent ut dui ac tortor ultricies volutpat. Proin in urna eu velit hendrerit gravida a sit amet ipsum.</p>
-
-        <!-- Contador -->
-        <div class="counter-wrap">
-          <span class="counter-value" data-target="88.90">0,00%</span>
-          <div class="counter-subtitle">Satisfacción</div>
+    <!-- Acerca -->
+    <section class="section bg-image" id="acerca" role="region" aria-label="Acerca de nosotros">
+      <div class="content one-col">
+        <h1 class="section-label">Acerca de nosotros</h1>
+        <div class="team-grid">
+          <div class="team-card">
+            <div class="avatar-ring">
+              <img src="/images/avatar1.jpg" alt="Avatar Nombre1" class="avatar-img" />
+            </div>
+            <div class="team-name">Leonardo Gualotuña</div>
+            <div class="team-role">Prof1</div>
+          </div>
+          <div class="team-card">
+            <div class="avatar-ring">
+              <img src="/images/avatar2.jpg" alt="Avatar Nombre2" class="avatar-img" />
+            </div>
+            <div class="team-name">Matías Fonseca</div>
+            <div class="team-role">Prof2</div>
+          </div>
+          <div class="team-card">
+            <div class="avatar-ring">
+              <img src="/images/avatar3.jpg" alt="Avatar Nombre3" class="avatar-img" />
+            </div>
+            <div class="team-name">Arturo Cueva</div>
+            <div class="team-role">Prof3</div>
+          </div>
         </div>
       </div>
     </section>
+
+    <footer class="site-footer" role="contentinfo" aria-label="Pie de página">
+      <div class="footer-wrap">
+        <div class="footer-brand">Análisis Egresos Hospitalarios - Ecuador 2024</div>
+        <div class="footer-right">
+          <span>&copy; {new Date().getFullYear()} Todos los derechos reservados</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
 
     <script is:inline>
-      // Fade bidireccional: aparece al entrar, desaparece al salir
-      const sections = Array.from(document.querySelectorAll('.section'));
+      // Navegación + fade-in
+      const navLinks=[...document.querySelectorAll('a[data-nav]')];
+      const sections=[...document.querySelectorAll('.section')];
+      function setActive(id){navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')===`#${id}`));}
+      const sectionObs=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');setActive(e.target.id);}})},{threshold:0.2});
+      sections.forEach(s=>sectionObs.observe(s));
 
-      const onIntersect = (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-          } else {
-            entry.target.classList.remove('is-visible');
-          }
+      // Contadores mixtos: número y porcentaje
+      function formatNumber(value, decimals = 2, locale = 'es-EC') {
+        return Number(value).toLocaleString(locale, {
+          minimumFractionDigits: decimals,
+          maximumFractionDigits: decimals
         });
-      };
-
-      const observer = new IntersectionObserver(onIntersect, {
-        root: null,
-        rootMargin: '0px 0px -20% 0px',
-        threshold: 0.15
-      });
-
-      sections.forEach(sec => observer.observe(sec));
-
-      // -------- Contadores --------
-      function formatPercent(val, decimals = 2) {
-        return val.toFixed(decimals).replace('.', ',') + '%';
       }
-
-      function animateCounter(el, endValue, {
-        startValue = 0,
-        duration = 1500,
-        decimals = 2,
-        easing = 'easeOutCubic'
-      } = {}) {
-        const easings = {
-          linear: t => t,
-          easeOutCubic: t => 1 - Math.pow(1 - t, 3),
-          easeOutQuart: t => 1 - Math.pow(1 - t, 4),
-          easeOutQuint: t => 1 - Math.pow(1 - t, 5)
-        };
-        const ease = easings[easing] || easings.easeOutCubic;
-
+      function formatPercent(value, decimals = 2, locale = 'es-EC') {
+        return `${Number(value).toLocaleString(locale, {
+          minimumFractionDigits: decimals,
+          maximumFractionDigits: decimals
+        })}%`;
+      }
+      function parseTarget(raw) {
+        const s = String(raw).trim();
+        const isPercent = s.endsWith('%');
+        // Normaliza separadores si el usuario pone coma como decimal en el data-target
+        const numeric = parseFloat(s.replace('%','').replace(/\./g,'').replace(',','.'));
+        return { isPercent, value: numeric };
+      }
+      function animateCounter(el, endCfg, { startValue = 0, duration = 1500, defaultDecimals = 2 } = {}) {
+        const ease = t => 1 - Math.pow(1 - t, 3);
         let startTs = null;
-        function step(ts) {
-          if (!startTs) startTs = ts;
-          const progress = Math.min((ts - startTs) / duration, 1);
-          const eased = ease(progress);
-          const current = startValue + (endValue - startValue) * eased;
-          el.textContent = formatPercent(current, decimals);
-          if (progress < 1) requestAnimationFrame(step);
-          else el.textContent = formatPercent(endValue, decimals);
+        const { isPercent, value } = endCfg;
+        // Permite especificar decimales manualmente con data-decimals
+        const decimalsAttr = el.dataset.decimals;
+        const decimals = Number.isFinite(parseInt(decimalsAttr,10)) ? parseInt(decimalsAttr,10) : defaultDecimals;
+
+        function step(ts){
+          if(!startTs) startTs = ts;
+          const p = Math.min((ts - startTs) / duration, 1);
+          const cur = startValue + (value - startValue) * ease(p);
+          el.textContent = isPercent ? formatPercent(cur, decimals) : formatNumber(cur, decimals);
+          if(p < 1) requestAnimationFrame(step);
         }
         requestAnimationFrame(step);
       }
 
-      // Observa cada .section y anima todos los contadores internos al entrar
-      const counterObserver = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            const counters = e.target.querySelectorAll('.counter-value:not([data-animated])');
-            counters.forEach(el => {
-              el.setAttribute('data-animated', 'true');
-              const target = parseFloat(el.dataset.target || '0');
-              animateCounter(el, target, { duration: 1600, decimals: 2, easing: 'easeOutQuint' });
+      const counterObs = new IntersectionObserver((entries)=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting){
+            entry.target.querySelectorAll('.counter-value:not([data-animated])').forEach(el=>{
+              el.setAttribute('data-animated','true');
+              const targetRaw = el.dataset.target || '0';
+              const cfg = parseTarget(targetRaw);
+              // Si el contenido inicial tenía % u otro formato, lo sobreescribimos animado
+              animateCounter(el, cfg, { duration: 1600, defaultDecimals: 2 });
             });
           }
         });
-      }, { threshold: 0.35 });
+      },{threshold:0.15});
+      sections.forEach(s=>counterObs.observe(s));
 
-      sections.forEach(sec => counterObserver.observe(sec));
+      // Liquid Glass cursor glow
+      document.querySelectorAll('.liquid-glass').forEach(card=>{
+        card.addEventListener('pointermove',e=>{
+          const r=card.getBoundingClientRect();
+          const x=((e.clientX-r.left)/r.width)*100;
+          const y=((e.clientY-r.top)/r.height)*100;
+          card.style.setProperty('--glow-x',`${x}%`);
+          card.style.setProperty('--glow-y',`${y}%`);
+        });
+        card.addEventListener('pointerleave',()=>{
+          card.style.removeProperty('--glow-x');
+          card.style.removeProperty('--glow-y');
+        });
+      });
+
+      async function fetchJsonClean(url){
+        const res=await fetch(url,{cache:'no-store'});
+        if(!res.ok) throw new Error(`Fetch ${url} falló: ${res.status} ${res.statusText}`);
+        let t=await res.text();
+        if(t.charCodeAt(0)===0xFEFF) t=t.slice(1);
+        t=t.replace(/\bNaN\b/g,'null');
+        return JSON.parse(t);
+      }
+
+      // Pie seguro
+      async function renderPieTipoSeguro(){
+        const el=document.getElementById('chart-datos-1'); if(!el) return;
+        try{
+          const raw=await fetchJsonClean('data/tipo_seguro.json');
+          if(!Array.isArray(raw)||raw.length===0) throw new Error('JSON vacío');
+          const rows=raw.map(r=>({Tipo:String((r.TipoSeguro??r['Tipo seguro']??r.tipo??r.seguro??'')).trim(),Valor:Number(r.Total??r.total??r.Cantidad??r.cantidad??r.Valor??r.valor??r['Unnamed: 1'])})).filter(d=>d.Tipo&&Number.isFinite(d.Valor));
+          const seriesData=rows.map(d=>({name:d.Tipo,value:d.Valor})); const total=seriesData.reduce((a,d)=>a+d.value,0);
+          const chart=echarts.init(el,null,{renderer:'canvas'});
+          chart.setOption({
+            color:['#1e3a8a','#3b82f6','#60a5fa','#93c5fd','#bfdbfe','#1d4ed8','#2563eb','#38bdf8','#0ea5e9','#82a6fb'],
+            title:{text:'Tipos de seguro de salud',left:'center',top:12},
+            toolbox:{feature:{saveAsImage:{}}},
+            tooltip:{trigger:'item',formatter:p=>{const pct=total?(p.value/total)*100:0;return`${p.marker} ${p.name}<br>Cantidad: <b>${Number(p.value).toLocaleString()}</b><br>Porcentaje: <b>${pct.toFixed(2)}%</b>`;}},
+            legend:{type:'scroll',orient:'vertical',right:10,top:40,bottom:20},
+            series:[{type:'pie',radius:['35%','65%'],center:['40%','55%'],itemStyle:{borderRadius:6,borderColor:'#fff',borderWidth:2},label:{show:true,formatter:p=>{const pct=total?(p.value/total)*100:0;return`${p.name}\n${pct.toFixed(1)}%`;}},
+              data:seriesData}]
+          });
+          window.addEventListener('resize',()=>chart.resize());
+        }catch(err){console.error(err); el.innerHTML='<div class="placeholder">Error cargando datos</div>';}
+      }
+
+      // DATOS 2 — Total SIEMPRE = Urbana + Rural (ignorando "Total" directo)
+      async function renderBarrasEgresosProvincia() {
+        const el=document.getElementById('chart-datos-2'); if(!el) return;
+        const btnRow=document.getElementById('egresos-buttons');
+        try{
+          const raw=await fetchJsonClean('data/egresos_prov_canton_parroquia_area.json');
+
+          const pick=(o,keys)=>{for(const k of keys){if(o[k]!=null) return o[k];} return undefined;};
+          const toNumber=(v)=>{
+            if(typeof v==='number') return Number.isFinite(v)?v:NaN;
+            if(v==null) return NaN;
+            let s=String(v).trim(); if(!s) return NaN;
+            s=s.replace(/[\s\u00A0]/g,'');
+            s=s.replace(/[^0-9,.\-]/g,'');
+            if(s.includes('.')&&s.includes(',')){
+              const m=s.match(/,(\d{1,2})$/);
+              if(m){ s=s.replace(/\./g,''); s=s.replace(',', '.'); }
+              else { s=s.replace(/[.,]/g,''); }
+            }else{
+              if(s.includes(',')&&!s.includes('.')) s=s.replace(/,/g,'');
+              if(s.includes('.')&&!s.includes(',')) s=s.replace(/\./g,'');
+            }
+            const n=parseFloat(s); return Number.isFinite(n)?n:NaN;
+          };
+          const normArea=v=>{
+            if(v==null) return null;
+            const s=String(v).trim().toLowerCase();
+            if(['urbana','u','urb','urban','area urbana','1'].includes(s)) return 'Urbana';
+            if(['rural','r','rur','area rural','0'].includes(s)) return 'Rural';
+            return null;
+          };
+
+          const PROV_KEYS=['Provincia','provincia','prov_ubi','PROVINCIA','PROVINCIA_UBI','prov','provincia_ubi','prov_Provincia'];
+          const URB_KEYS=['Urbana','urbana','URBANA','area_urbana','Urb','urb','Urbano','urbano','URBANO','urb_egresos','urbana_egresos'];
+          const RUR_KEYS=['Rural','rural','RURAL','area_rural','Rur','rur','rur_egresos','rural_egresos'];
+          const AREA_KEYS=['Area','Área','area','área','AREA'];
+          const CANT_KEYS=['Cantidad','cantidad','Count','count','Egresos','egresos','num_egresos','valor','TOTAL'];
+
+          const byProv=new Map();
+          (Array.isArray(raw)?raw:[]).forEach(r=>{
+            const provRaw=pick(r,PROV_KEYS); if(!provRaw) return;
+            const prov=String(provRaw).trim();
+
+            const urbNum=toNumber(pick(r,URB_KEYS));
+            const rurNum=toNumber(pick(r,RUR_KEYS));
+
+            const areaVal=normArea(pick(r,AREA_KEYS));
+            const cant=toNumber(pick(r,CANT_KEYS));
+
+            const cur=byProv.get(prov)||{prov,urb:0,rur:0,hasU:false,hasR:false};
+
+            if(Number.isFinite(urbNum) && urbNum>=0){ cur.urb += urbNum; cur.hasU = true; }
+            if(Number.isFinite(rurNum) && rurNum>=0){ cur.rur += rurNum; cur.hasR = true; }
+
+            if(areaVal && Number.isFinite(cant) && cant>=0){
+              if(areaVal==='Urbana'){ cur.urb += cant; cur.hasU = true; }
+              if(areaVal==='Rural'){  cur.rur += cant; cur.hasR = true; }
+            }
+
+            byProv.set(prov,cur);
+          });
+
+          let rows=[...byProv.values()].map(o=>{
+            const Urbana = Number.isFinite(o.urb)?o.urb:0;
+            const Rural  = Number.isFinite(o.rur)?o.rur:0;
+            const Total  = Urbana + Rural;
+            return {Provincia:o.prov, Total, Urbana, Rural};
+          });
+
+          if(rows.length===0) throw new Error('Sin datos de provincias');
+
+          let currentKey='Total';
+          const buttons=[...btnRow.querySelectorAll('button.seg-btn')];
+          function paintButtons(){
+            buttons.forEach(b=>{
+              const active=b.dataset.key===currentKey;
+              b.style.background=active?'#2563eb':'#fff';
+              b.style.color=active?'#fff':'#0f172a';
+              b.style.border='1px solid #cbd5e1';
+              b.style.borderRadius='8px';
+              b.style.padding='6px 10px';
+              b.style.cursor='pointer';
+              b.style.boxShadow='0 1px 2px rgba(0,0,0,0.05)';
+            });
+          }
+          buttons.forEach(b=>b.addEventListener('click',()=>{currentKey=b.dataset.key; paintButtons(); update();}));
+          paintButtons();
+
+          const chart=echarts.init(el,null,{renderer:'canvas'});
+
+          function update(){
+            const data=rows.map(r=>({Provincia:r.Provincia,Valor:Number(r[currentKey])||0}));
+            data.sort((a,b)=>b.Valor-a.Valor);
+
+            const categorias=data.map(d=>d.Provincia);
+            const valores=data.map(d=>d.Valor);
+            const totalSel=valores.reduce((a,v)=>a+v,0);
+
+            chart.setOption({
+              color:['#2563eb'],
+              title:{text:`Egresos por provincia (${currentKey})`,left:'center',top:12},
+              grid:{left:70,right:40,top:80,bottom:130},
+              toolbox:{feature:{saveAsImage:{}}},
+              tooltip:{trigger:'axis',axisPointer:{type:'shadow'},formatter:params=>{
+                const p=params[0]; const pct=totalSel?(p.value/totalSel)*100:0;
+                return `<b>${p.name}</b><br/>${currentKey}: <b>${Number(p.value).toLocaleString()}</b><br/>Participación: <b>${pct.toFixed(2)}%</b>`;
+              }},
+              xAxis:{type:'category',data:categorias,axisLabel:{interval:0,rotate:40,margin:20}},
+              yAxis:{type:'value',name:currentKey,nameLocation:'middle',nameGap:40,axisLabel:{formatter:v=>Number(v).toLocaleString()},splitLine:{lineStyle:{color:'rgba(0,0,0,0.08)'}}},
+              dataZoom:[
+                {type:'slider',xAxisIndex:0,height:16,bottom:80,start:0,end:100},
+                {type:'inside',xAxisIndex:0}
+              ],
+              series:[{
+                type:'bar',
+                data:valores,
+                barWidth:26,
+                itemStyle:{borderRadius:[6,6,0,0],color:new echarts.graphic.LinearGradient(0,1,0,0,[{offset:0,color:'#60a5fa'},{offset:1,color:'#1e3a8a'}])},
+                label:{show:true,position:'top',formatter:({value})=>Number(value).toLocaleString(),fontSize:11,color:'#0b1220'}
+              }]
+            });
+            chart.resize();
+          }
+
+          update();
+          window.addEventListener('resize',()=>chart.resize());
+        }catch(err){
+          console.error(err);
+          el.innerHTML='<div class="placeholder">Error cargando datos</div>';
+        }
+      }
+
+      // Datos 3 — Barras causas
+      async function renderBarrasCausasSexo(){
+        const el=document.getElementById('chart-datos-3'); if(!el) return;
+        try{
+          const raw=await fetchJsonClean('data/causas_sexo_total.json');
+          const rows=(Array.isArray(raw)?raw:[]).map(r=>{
+            const causa=r.Causa??r.Causas??r.causa??r.CAUSA??r.CAUSAS;
+            const h=r.Hombre??r.Hombres??r.hombre??r.masculino??r.Masculino;
+            const m=r.Mujer??r.Mujeres??r.mujer??r.femenino??r.Femenino;
+            const total=r.Total??r.total??(Number(h)||0)+(Number(m)||0);
+            return {Causa:String(causa||'').trim(),Hombre:Number(h),Mujer:Number(m),Total:Number(total)};
+          }).filter(r=>r.Causa&&(Number.isFinite(r.Total)||Number.isFinite(r.Hombre)||Number.isFinite(r.Mujer)));
+          if(rows.length===0) throw new Error('Sin filas válidas');
+
+          const wrapper=document.createElement('div');
+          wrapper.style.display='flex'; wrapper.style.justifyContent='center'; wrapper.style.gap='8px'; wrapper.style.margin='8px 0 6px 0';
+          const metrics=[{key:'Total',label:'Total'},{key:'Hombre',label:'Hombres'},{key:'Mujer',label:'Mujeres'}];
+          let currentKey='Total'; const buttons=[];
+          function paint(){buttons.forEach(b=>{const a=b.dataset.key===currentKey; b.style.background=a?'#2563eb':'#fff'; b.style.color=a?'#fff':'#0f172a';});}
+          metrics.forEach(m=>{const b=document.createElement('button'); b.type='button'; b.textContent=m.label; b.dataset.key=m.key; Object.assign(b.style,{padding:'6px 10px',borderRadius:'8px',border:'1px solid #cbd5e1',background:'#fff',color:'#0f172a',cursor:'pointer',fontSize:'14px',boxShadow:'0 1px 2px rgba(0,0,0,0.05)'}); b.onclick=()=>{currentKey=m.key; paint(); update();}; buttons.push(b); wrapper.appendChild(b);});
+          el.parentNode.insertBefore(wrapper,el); paint();
+
+          const targetHeight=Math.max(560,30*rows.length+200); el.style.minHeight=`${targetHeight}px`;
+          const chart=echarts.init(el,null,{renderer:'canvas'});
+          function update(){
+            const sorted=[...rows].sort((a,b)=>(b[currentKey]||0)-(a[currentKey]||0));
+            const causas=sorted.map(r=>r.Causa); const valores=sorted.map(r=>r[currentKey]||0); const totalSel=valores.reduce((a,v)=>a+v,0);
+            chart.setOption({
+              color:['#2563eb'],
+              title:{text:`Egresos por causa (${currentKey})`,left:'center',top:12},
+              grid:{left:160,right:64,top:72,bottom:48},
+              toolbox:{feature:{saveAsImage:{}}},
+              tooltip:{trigger:'axis',axisPointer:{type:'shadow'},formatter:params=>{const p=params[0]; const pct=totalSel?(p.value/totalSel)*100:0; return `${p.name}<br/>Cantidad: <b>${Number(p.value).toLocaleString()}</b><br/>Porcentaje: <b>${pct.toFixed(2)}%</b>`;}},
+              xAxis:{type:'value',name:'Egresos',nameLocation:'middle',nameGap:30,axisLabel:{formatter:v=>Number(v).toLocaleString()},splitLine:{lineStyle:{color:'rgba(0,0,0,0.08)'}}},
+              yAxis:{type:'category',data:causas,axisTick:{show:false},axisLabel:{interval:0},inverse:true},
+              dataZoom:[{type:'slider',show:true,yAxisIndex:0,width:14,right:8,start:0,end:100},{type:'inside',yAxisIndex:0}],
+              series:[{type:'bar',name:currentKey,data:valores,barWidth:18,barCategoryGap:'30%',
+                itemStyle:{borderRadius:[6,6,6,6],color:new echarts.graphic.LinearGradient(1,0,0,0,[{offset:0,color:'#60a5fa'},{offset:1,color:'#1e3a8a'}])},
+                label:{show:true,position:'right',formatter:p=>{const pct=totalSel?(p.value/totalSel)*100:0; return `${Number(p.value).toLocaleString()}  (${pct.toFixed(1)}%)`;},color:'#0b1220',fontSize:11},
+                emphasis:{focus:'series',itemStyle:{shadowBlur:12,shadowColor:'rgba(37,99,235,0.35)'}}}]
+            });
+            chart.resize();
+          }
+          update(); window.addEventListener('resize',()=>chart.resize());
+        }catch(err){console.error(err); el.innerHTML='<div class="placeholder">Error cargando datos</div>';}
+      }
+
+      // Contexto 1
+      async function loadPaisesContinentes(){const r=await fetch('data/paises_continentes.json',{cache:'no-store'}); if(!r.ok) throw new Error('No se pudo cargar data/paises_continentes.json'); return r.json();}
+      async function renderContexto1(){
+        const el=document.getElementById('chart-contexto-1'); if(!el) return;
+        const data=await loadPaisesContinentes();
+        const get=(o,ks)=>{for(const k of ks){if(k in o) return o[k];}};
+        const agg=new Map(); data.forEach(row=>{const c=get(row,['Continente','continente','CONTINENTE']); const evs=parseFloat(get(row,['EVS','evs','Evs'])); if(!c||isNaN(evs)) return; const cur=agg.get(c)||{sum:0,n:0}; cur.sum+=evs; cur.n+=1; agg.set(c,cur);});
+        const rows=[...agg.entries()].map(([k,v])=>[k,v.sum/v.n]).sort((a,b)=>b[1]-a[1]);
+        const continents=rows.map(r=>r[0]); const values=rows.map(r=>Number(r[1].toFixed(2))); const ecuValor=64.34;
+        const chart=echarts.init(el,null,{renderer:'canvas'});
+        chart.setOption({
+          color:['#2563eb'],
+          title:{text:'Promedio EVS por continente',left:'center',top:18},
+          grid:{left:60,right:56,top:90,bottom:60},
+          toolbox:{feature:{saveAsImage:{}}},
+          tooltip:{trigger:'axis',axisPointer:{type:'shadow'}},
+          xAxis:{type:'category',data:continents,axisLabel:{interval:0,rotate:0}},
+          yAxis:{type:'value',name:'EVS',nameLocation:'middle',nameGap:36},
+          series:[{type:'bar',name:'EVS promedio',data:values,barWidth:28,itemStyle:{borderRadius:[6,6,0,0],color:new echarts.graphic.LinearGradient(0,1,0,0,[{offset:0,color:'#60a5fa'},{offset:1,color:'#1e3a8a'}])},
+                   label:{show:true,position:'top',formatter:({value})=>Number(value).toFixed(1)},
+                   markLine:{symbol:['none','none'],lineStyle:{color:'#ef4444',type:'dashed'},data:[{yAxis:ecuValor}],label:{show:true,formatter:`Ecuador ${ecuValor}`}}}]
+        });
+        window.addEventListener('resize',()=>chart.resize());
+      }
+
+      // Contexto 2
+      async function loadHistoricoEVS(){const r=await fetch('data/historico_evs_ec.json',{cache:'no-store'}); if(!r.ok) throw new Error('No se pudo cargar data/historico_evs_ec.json'); return r.json();}
+      async function renderContexto2(){
+        const el=document.getElementById('chart-contexto-2'); if(!el) return;
+        const raw=await loadHistoricoEVS(); if(!Array.isArray(raw)||raw.length===0) return;
+        const cols=Object.keys(raw[0]||{}); const idCol=cols.find(c=>c.toLowerCase().includes('id')||c.toLowerCase().includes('sex'))||cols[0];
+        const years=cols.filter(c=>c!==idCol).map(c=>({key:c,year:parseInt(String(c),10)})).filter(x=>!Number.isNaN(x.year)).sort((a,b)=>a.year-b.year);
+        const xCategories=years.map(y=>y.year); const byDato=new Map(); raw.forEach(r=>byDato.set(String(r[idCol]).trim(),r));
+        const toSeries=dato=>{const row=byDato.get(dato); return years.map(({key})=>{const v=row?row[key]:null; const num=typeof v==='number'?v:parseFloat(v); return Number.isFinite(num)?Number(num.toFixed(2)):null;});};
+        const serieMujeres=toSeries('Mujeres'); const serieHombres=toSeries('Hombres');
+        const chart=echarts.init(el,null,{renderer:'canvas'});
+        chart.setOption({
+          title:{text:'EVS Ecuador por año',left:'center',top:18},
+          legend:{top:14,right:10,data:['Mujeres','Hombres']},
+          grid:{left:60,right:24,top:90,bottom:48},
+          tooltip:{trigger:'axis',axisPointer:{type:'line'}},
+          xAxis:{type:'category',data:xCategories,boundaryGap:false},
+          yAxis:{type:'value',name:'EVS',nameLocation:'middle',nameGap:36},
+          series:[
+            {name:'Mujeres',type:'line',smooth:true,color:'#dc2626',data:serieMujeres,symbolSize:6,lineStyle:{width:2}},
+            {name:'Hombres',type:'line',smooth:true,color:'#2563eb',data:serieHombres,symbolSize:6,lineStyle:{width:2}}
+          ]
+        });
+        window.addEventListener('resize',()=>chart.resize());
+      }
+
+      // Lazy load
+      const datosSection=document.getElementById('datos');
+      const datosObs=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){
+        renderPieTipoSeguro().catch(console.error);
+        renderBarrasEgresosProvincia().catch(console.error);
+        renderBarrasCausasSexo().catch(console.error);
+        datosObs.disconnect();
+      }})},{threshold:0.2});
+      if(datosSection) datosObs.observe(datosSection);
+
+      const contextoSection=document.getElementById('contexto');
+      const ctxObs=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){
+        renderContexto1().catch(console.error);
+        renderContexto2().catch(console.error);
+        e.target.querySelectorAll('.counter-value:not([data-animated])').forEach(el=>{
+          el.setAttribute('data-animated','true');
+          const targetRaw = el.dataset.target || '0';
+          const cfg = parseTarget(targetRaw);
+          animateCounter(el, cfg, { duration: 1600, defaultDecimals: 2 });
+        });
+        ctxObs.disconnect();
+      }})},{threshold:0.2});
+      if(contextoSection) ctxObs.observe(contextoSection);
     </script>
+
+    <style is:global>
+      .content-block { position: relative; }
+      .row-full { grid-column: 1 / -1 !important; width: 100%; display: block !important; margin: 10px 0; }
+      .row-full .text-col { all: unset; }
+
+      .fullwidth-card {
+        width: 100%; max-width: 100%; position: relative; border-radius: 14px; overflow: hidden;
+        background: rgba(255,255,255,0.42); backdrop-filter: blur(10px) saturate(120%); -webkit-backdrop-filter: blur(10px) saturate(120%);
+        box-shadow: 0 10px 30px rgba(2,6,23,0.15), inset 0 1px 0 rgba(255,255,255,0.4);
+        border: 1px solid rgba(148,163,184,0.25);
+      }
+      .fullwidth-card::before {
+        content: ''; position: absolute; inset: -1px;
+        background: radial-gradient(800px 400px at var(--glow-x,50%) var(--glow-y,50%), rgba(59,130,246,0.18), rgba(59,130,246,0) 60%);
+        pointer-events: none; opacity: .9; transition: opacity 180ms ease;
+      }
+      .fullwidth-card .inner-glow { position: absolute; inset: 0; background: radial-gradient(600px 300px at var(--glow-x,50%) var(--glow-y,50%), rgba(255,255,255,0.35), rgba(255,255,255,0) 60%); mix-blend-mode: overlay; pointer-events: none; }
+      .fullwidth-card-body { position: relative; padding: 18px 20px; }
+
+      .chart-source { font-size: .85rem; color: rgba(15,23,42,.75); margin-top: 6px; text-align: center; }
+      .text-title { font-size: 1.15rem; font-weight: 700; color: #0b1220; margin: 0 0 6px 0; letter-spacing: .2px; }
+
+      .full-bleed { width: 100% !important; max-width: 100% !important; margin-left: 0; margin-right: 0; }
+
+      .btn-row .seg-btn { font-size:14px; }
+
+      @media (min-width: 992px) {
+        .fullwidth-card-body { padding: 22px 26px; }
+      }
+    </style>
   </body>
 </html>

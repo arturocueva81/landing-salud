@@ -1,0 +1,98 @@
+[
+  {
+    "Provincia": "Guayas",
+    "Egresos": 270703
+  },
+  {
+    "Provincia": "Pichincha",
+    "Egresos": 250122
+  },
+  {
+    "Provincia": "Manabí",
+    "Egresos": 101904
+  },
+  {
+    "Provincia": "Azuay",
+    "Egresos": 75889
+  },
+  {
+    "Provincia": "El Oro",
+    "Egresos": 47863
+  },
+  {
+    "Provincia": "Tungurahua",
+    "Egresos": 46808
+  },
+  {
+    "Provincia": "Los Ríos",
+    "Egresos": 42623
+  },
+  {
+    "Provincia": "Santo Domingo de los Tsáchilas",
+    "Egresos": 37881
+  },
+  {
+    "Provincia": "Loja",
+    "Egresos": 34354
+  },
+  {
+    "Provincia": "Chimborazo",
+    "Egresos": 32452
+  },
+  {
+    "Provincia": "Imbabura",
+    "Egresos": 32441
+  },
+  {
+    "Provincia": "Esmeraldas",
+    "Egresos": 22479
+  },
+  {
+    "Provincia": "Cotopaxi",
+    "Egresos": 22311
+  },
+  {
+    "Provincia": "Santa Elena",
+    "Egresos": 19601
+  },
+  {
+    "Provincia": "Cañar",
+    "Egresos": 16302
+  },
+  {
+    "Provincia": "Morona Santiago",
+    "Egresos": 14098
+  },
+  {
+    "Provincia": "Sucumbíos",
+    "Egresos": 12796
+  },
+  {
+    "Provincia": "Napo",
+    "Egresos": 9270
+  },
+  {
+    "Provincia": "Carchi",
+    "Egresos": 9134
+  },
+  {
+    "Provincia": "Bolívar",
+    "Egresos": 9001
+  },
+  {
+    "Provincia": "Zamora Chinchipe",
+    "Egresos": 8512
+  },
+  {
+    "Provincia": "Orellana",
+    "Egresos": 7287
+  },
+  {
+    "Provincia": "Pastaza",
+    "Egresos": 6988
+  },
+  {
+    "Provincia": "Galápagos",
+    "Egresos": 1848
+  }
+]

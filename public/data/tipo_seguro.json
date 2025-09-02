@@ -1,0 +1,34 @@
+[
+  {
+    "TipoSeguro": "Ninguno                            ",
+    "Total": 694387
+  },
+  {
+    "TipoSeguro": "IESS, afiliado seguro general      ",
+    "Total": 227487
+  },
+  {
+    "TipoSeguro": "Seguro privado                      ",
+    "Total": 62669
+  },
+  {
+    "TipoSeguro": "Seguro indirecto                    ",
+    "Total": 55893
+  },
+  {
+    "TipoSeguro": "IESS, afiliado seguro campesino     ",
+    "Total": 42322
+  },
+  {
+    "TipoSeguro": "Sin información                     ",
+    "Total": 19769
+  },
+  {
+    "TipoSeguro": "Seguro ISFFA                        ",
+    "Total": 17391
+  },
+  {
+    "TipoSeguro": "Seguro ISPOL                        ",
+    "Total": 12749
+  }
+]

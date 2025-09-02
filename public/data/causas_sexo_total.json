@@ -1,0 +1,116 @@
+[
+  {
+    "Causa": "Embarazo/Parto (O)",
+    "Hombre": 0,
+    "Mujer": 242769,
+    "Total": 242769
+  },
+  {
+    "Causa": "Digestivo (K)",
+    "Hombre": 79907,
+    "Mujer": 91987,
+    "Total": 171894
+  },
+  {
+    "Causa": "Traumatismos/Envenenamientos (S-T)",
+    "Hombre": 89336,
+    "Mujer": 45487,
+    "Total": 134823
+  },
+  {
+    "Causa": "Genitourinario (N)",
+    "Hombre": 41330,
+    "Mujer": 57162,
+    "Total": 98492
+  },
+  {
+    "Causa": "Neoplasias/Sangre (C-D)",
+    "Hombre": 35417,
+    "Mujer": 62595,
+    "Total": 98012
+  },
+  {
+    "Causa": "Respiratorio (J)",
+    "Hombre": 42520,
+    "Mujer": 40036,
+    "Total": 82556
+  },
+  {
+    "Causa": "Circulatorio (I)",
+    "Hombre": 28466,
+    "Mujer": 23685,
+    "Total": 52151
+  },
+  {
+    "Causa": "Infecciosas A-B)",
+    "Hombre": 25552,
+    "Mujer": 25045,
+    "Total": 50597
+  },
+  {
+    "Causa": "Perinatales (P)",
+    "Hombre": 22239,
+    "Mujer": 19802,
+    "Total": 42041
+  },
+  {
+    "Causa": "Endocrinas (E)",
+    "Hombre": 13115,
+    "Mujer": 17861,
+    "Total": 30976
+  },
+  {
+    "Causa": "Osteomuscular (M)",
+    "Hombre": 13737,
+    "Mujer": 14694,
+    "Total": 28431
+  },
+  {
+    "Causa": "Piel (L)",
+    "Hombre": 10548,
+    "Mujer": 8579,
+    "Total": 19127
+  },
+  {
+    "Causa": "Factores (Z)",
+    "Hombre": 4672,
+    "Mujer": 13706,
+    "Total": 18378
+  },
+  {
+    "Causa": "Sintomas/Hallazgos (R)",
+    "Hombre": 7826,
+    "Mujer": 8948,
+    "Total": 16774
+  },
+  {
+    "Causa": "Sistema Nervioso (G)",
+    "Hombre": 7054,
+    "Mujer": 6771,
+    "Total": 13825
+  },
+  {
+    "Causa": "Congénitas (Q)",
+    "Hombre": 7114,
+    "Mujer": 4942,
+    "Total": 12056
+  },
+  {
+    "Causa": "Mentales (F)",
+    "Hombre": 5029,
+    "Mujer": 5595,
+    "Total": 10624
+  },
+  {
+    "Causa": "Ojo/Oído (H)",
+    "Hombre": 3512,
+    "Mujer": 4085,
+    "Total": 7597
+  },
+  {
+    "Causa": "Códigos Especiales (U)",
+    "Hombre": 746,
+    "Mujer": 798,
+    "Total": 1544
+  }
+]

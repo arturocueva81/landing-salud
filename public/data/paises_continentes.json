@@ -1,0 +1,917 @@
+[
+  {
+    "Continente": "Asia",
+    "Pais": "Afganistán",
+    "EVS": 50.4
+  },
+  {
+    "Continente": "Europa",
+    "Pais": "Albania",
+    "EVS": 66.69
+  },
+  {
+    "Continente": "Europa",
+    "Pais": "Alemania",
+    "EVS": 68.93
+  },
+  {
+    "Continente": "África",
+    "Pais": "Angola",
+    "EVS": 53.8
+  },
+  {
+    "Continente": "América",
+    "Pais": "Antigua Y Barbuda",
+    "EVS": 66.52
+  },
+  {
+    "Continente": "Asia",
+    "Pais": "Arabia Saudita",
+    "EVS": 65.6
+  },
+  {
+    "Continente": "África",
+    "Pais": "Argelia",
+    "EVS": 65.55
+  },
+  {
+    "Continente": "América",
+    "Pais": "Argentina",
+    "EVS": 64.79
+  },
+  {
+    "Continente": "Asia",
+    "Pais": "Armenia",
+    "EVS": 64.01
+  },
+  {
+    "Continente": "Oceanía",
+    "Pais": "Australia",
+    "EVS": 70.61
+  },
+  {
+    "Continente": "Europa",
+    "Pais": "Austria",
+    "EVS": 69.79
+  },
+  {
+    "Continente": "Asia",
+    "Pais": "Azerbaiyán",
+    "EVS": 64.0
+  },
+  {
+    "Continente": "América",
+    "Pais": "Bahamas",
+    "EVS": 61.52
+  },
+  {
+    "Continente": "Asia",
+    "Pais": "Bahrein",
+    "EVS": 64.2
+  },
+  {
+    "Continente": "Asia",
+    "Pais": "Bangladesh",
+    "EVS": 63.1
+  },
+  {
+    "Continente": "América",
+    "Pais": "Barbados",
+    "EVS": 66.67
+  },
+  {
+    "Continente": "Europa",
+    "Pais": "Belarús",
+    "EVS": 63.7
+  },
+  {
+    "Continente": "Europa",
+    "Pais": "Bélgica",
+    "EVS": 69.79
+  },
+  {
+    "Continente": "América",
+    "Pais": "Belice",
+    "EVS": 63.82
+  },
+  {
+    "Continente": "África",
+    "Pais": "Benin",
+    "EVS": 55.7
+  },
+  {
+    "Continente": "Asia",
+    "Pais": "Bhután",
+    "EVS": 64.8
+  },
+  {
+    "Continente": "América",
+    "Pais": "Bolivia (Estado Plurinacional De)",
+    "EVS": 57.43
+  },
+  {
+    "Continente": "Europa",
+    "Pais": "Bosnia Y Herzegovina",
+    "EVS": 64.99
+  },
+  {
+    "Continente": "África",
+    "Pais": "Botswana",
+    "EVS": 53.1
+  },
+  {
+    "Continente": "América",
+    "Pais": "Brasil",
+    "EVS": 61.83
+  },
+  {
+    "Continente": "Asia",
+    "Pais": "Brunei Darussalam",
+    "EVS": 67.1
+  },
+  {
+    "Continente": "Europa",
+    "Pais": "Bulgaria",
+    "EVS": 62.39
+  },
+  {
+    "Continente": "África",
+    "Pais": "Burkina Faso",
+    "EVS": 54.6
+  },
+  {
+    "Continente": "África",
+    "Pais": "Burundi",
+    "EVS": 55.8
+  },
+  {
+    "Continente": "África",
+    "Pais": "Cabo Verde",
+    "EVS": 63.77
+  },
+  {
+    "Continente": "Asia",
+    "Pais": "Camboya",
+    "EVS": 60.6
+  },
+  {
+    "Continente": "África",
+    "Pais": "Camerún",
+    "EVS": 54.0
+  },
+  {
+    "Continente": "América",
+    "Pais": "Canadá",
+    "EVS": 69.78
+  },
+  {
+    "Continente": "África",
+    "Pais": "Chad (El)",
+    "EVS": 51.5
+  },
+  {
+    "Continente": "Europa",
+    "Pais": "Chequia",
+    "EVS": 66.66
+  },
+  {
+    "Continente": "América",
+    "Pais": "Chile",
+    "EVS": 67.65
+  },
+  {
+    "Continente": "Asia",
+    "Pais": "China",
+    "EVS": 68.6
+  },
+  {
+    "Continente": "Europa",
+    "Pais": "Chipre",
+    "EVS": 70.74
+  },
+  {
+    "Continente": "América",
+    "Pais": "Colombia",
+    "EVS": 65.02
+  },
+  {
+    "Continente": "África",
+    "Pais": "Comoras",
+    "EVS": 59.0
+  },
+  {
+    "Continente": "África",
+    "Pais": "Congo (El)",
+    "EVS": 54.8
+  },
+  {
+    "Continente": "América",
+    "Pais": "Costa Rica",
+    "EVS": 67.63
+  },
+  {
+    "Continente": "África",
+    "Pais": "Côte D'Ivoire",
+    "EVS": 55.4
+  },
+  {
+    "Continente": "Europa",
+    "Pais": "Croacia",
+    "EVS": 66.8
+  },
+  {
+    "Continente": "América",
+    "Pais": "Cuba",
+    "EVS": 64.62
+  },
+  {
+    "Continente": "Europa",
+    "Pais": "Dinamarca",
+    "EVS": 70.1
+  },
+  {
+    "Continente": "África",
+    "Pais": "Djibouti",
+    "EVS": 57.0
+  },
+  {
+    "Continente": "América",
+    "Pais": "Ecuador",
+    "EVS": 64.34
+  },
+  {
+    "Continente": "África",
+    "Pais": "Egipto",
+    "EVS": 60.36
+  },
+  {
+    "Continente": "América",
+    "Pais": "El Salvador",
+    "EVS": 62.2
+  },
+  {
+    "Continente": "Asia",
+    "Pais": "Emiratos Árabes Unidos",
+    "EVS": 67.27
+  },
+  {
+    "Continente": "África",
+    "Pais": "Eritrea",
+    "EVS": 55.4
+  },
+  {
+    "Continente": "Europa",
+    "Pais": "Eslovaquia",
+    "EVS": 64.94
+  },
+  {
+    "Continente": "Europa",
+    "Pais": "Eslovenia",
+    "EVS": 69.4
+  },
+  {
+    "Continente": "Europa",
+    "Pais": "España",
+    "EVS": 71.11
+  },
+  {
+    "Continente": "América",
+    "Pais": "Estados Unidos De América",
+    "EVS": 63.91
+  },
+  {
+    "Continente": "Europa",
+    "Pais": "Estonia",
+    "EVS": 66.7
+  },
+  {
+    "Continente": "África",
+    "Pais": "Eswatini",
+    "EVS": 47.5
+  },
+  {
+    "Continente": "África",
+    "Pais": "Etiopía",
+    "EVS": 58.8
+  },
+  {
+    "Continente": "Europa / Asia",
+    "Pais": "Federación De Rusia",
+    "EVS": 60.9
+  },
+  {
+    "Continente": "Oceanía",
+    "Pais": "Fiji",
+    "EVS": 57.69
+  },
+  {
+    "Continente": "Asia",
+    "Pais": "Filipinas",
+    "EVS": 58.77
+  },
+  {
+    "Continente": "Europa",
+    "Pais": "Finlandia",
+    "EVS": 69.9
+  },
+  {
+    "Continente": "Europa",
+    "Pais": "Francia",
+    "EVS": 70.08
+  },
+  {
+    "Continente": "África",
+    "Pais": "Gabón",
+    "EVS": 56.3
+  },
+  {
+    "Continente": "África",
+    "Pais": "Gambia",
+    "EVS": 55.8
+  },
+  {
+    "Continente": "Asia",
+    "Pais": "Georgia",
+    "EVS": 62.48
+  },
+  {
+    "Continente": "África",
+    "Pais": "Ghana",
+    "EVS": 57.9
+  },
+  {
+    "Continente": "América",
+    "Pais": "Granada",
+    "EVS": 63.16
+  },
+  {
+    "Continente": "Europa",
+    "Pais": "Grecia",
+    "EVS": 68.55
+  },
+  {
+    "Continente": "América",
+    "Pais": "Guatemala",
+    "EVS": 59.25
+  },
+  {
+    "Continente": "África",
+    "Pais": "Guinea",
+    "EVS": 53.4
+  },
+  {
+    "Continente": "África",
+    "Pais": "Guinea Ecuatorial",
+    "EVS": 53.3
+  },
+  {
+    "Continente": "África",
+    "Pais": "Guinea-Bissau",
+    "EVS": 51.5
+  },
+  {
+    "Continente": "América",
+    "Pais": "Guyana",
+    "EVS": 56.82
+  },
+  {
+    "Continente": "América",
+    "Pais": "Haití",
+    "EVS": 53.9
+  },
+  {
+    "Continente": "América",
+    "Pais": "Honduras",
+    "EVS": 60.05
+  },
+  {
+    "Continente": "Europa",
+    "Pais": "Hungría",
+    "EVS": 64.84
+  },
+  {
+    "Continente": "Asia",
+    "Pais": "India",
+    "EVS": 58.1
+  },
+  {
+    "Continente": "Asia",
+    "Pais": "Indonesia",
+    "EVS": 60.67
+  },
+  {
+    "Continente": "Asia",
+    "Pais": "Irán (República Islámica Del)",
+    "EVS": 63.98
+  },
+  {
+    "Continente": "Asia",
+    "Pais": "Iraq",
+    "EVS": 61.02
+  },
+  {
+    "Continente": "Europa",
+    "Pais": "Irlanda",
+    "EVS": 70.0
+  },
+  {
+    "Continente": "Europa",
+    "Pais": "Islandia",
+    "EVS": 71.37
+  },
+  {
+    "Continente": "Oceanía",
+    "Pais": "Islas Salomón",
+    "EVS": 57.37
+  },
+  {
+    "Continente": "Asia",
+    "Pais": "Israel",
+    "EVS": 70.76
+  },
+  {
+    "Continente": "Europa",
+    "Pais": "Italia",
+    "EVS": 70.56
+  },
+  {
+    "Continente": "América",
+    "Pais": "Jamaica",
+    "EVS": 61.72
+  },
+  {
+    "Continente": "Asia",
+    "Pais": "Japón",
+    "EVS": 73.4
+  },
+  {
+    "Continente": "Asia",
+    "Pais": "Jordania",
+    "EVS": 65.07
+  },
+  {
+    "Continente": "Asia",
+    "Pais": "Kazajstán",
+    "EVS": 61.6
+  },
+  {
+    "Continente": "África",
+    "Pais": "Kenya",
+    "EVS": 58.2
+  },
+  {
+    "Continente": "Asia",
+    "Pais": "Kirguistán",
+    "EVS": 63.4
+  },
+  {
+    "Continente": "Oceanía",
+    "Pais": "Kiribati",
+    "EVS": 53.65
+  },
+  {
+    "Continente": "Asia",
+    "Pais": "Kuwait",
+    "EVS": 67.78
+  },
+  {
+    "Continente": "Europa",
+    "Pais": "La República De Moldova",
+    "EVS": 61.2
+  },
+  {
+    "Continente": "África",
+    "Pais": "Lesotho",
+    "EVS": 44.63
+  },
+  {
+    "Continente": "Europa",
+    "Pais": "Letonia",
+    "EVS": 63.76
+  },
+  {
+    "Continente": "Asia",
+    "Pais": "Líbano",
+    "EVS": 63.22
+  },
+  {
+    "Continente": "África",
+    "Pais": "Liberia",
+    "EVS": 54.0
+  },
+  {
+    "Continente": "África",
+    "Pais": "Libia",
+    "EVS": 62.06
+  },
+  {
+    "Continente": "Europa",
+    "Pais": "Lituania",
+    "EVS": 64.23
+  },
+  {
+    "Continente": "Europa",
+    "Pais": "Luxemburgo",
+    "EVS": 71.2
+  },
+  {
+    "Continente": "Europa",
+    "Pais": "Macedonia Del Norte",
+    "EVS": 63.71
+  },
+  {
+    "Continente": "África",
+    "Pais": "Madagascar",
+    "EVS": 55.1
+  },
+  {
+    "Continente": "Asia",
+    "Pais": "Malasia",
+    "EVS": 63.95
+  },
+  {
+    "Continente": "África",
+    "Pais": "Malawi",
+    "EVS": 54.7
+  },
+  {
+    "Continente": "Asia",
+    "Pais": "Maldivas",
+    "EVS": 66.7
+  },
+  {
+    "Continente": "África",
+    "Pais": "Malí",
+    "EVS": 53.6
+  },
+  {
+    "Continente": "Europa",
+    "Pais": "Malta",
+    "EVS": 70.71
+  },
+  {
+    "Continente": "África",
+    "Pais": "Marruecos",
+    "EVS": 62.34
+  },
+  {
+    "Continente": "África",
+    "Pais": "Mauricio",
+    "EVS": 63.63
+  },
+  {
+    "Continente": "África",
+    "Pais": "Mauritania",
+    "EVS": 60.4
+  },
+  {
+    "Continente": "América",
+    "Pais": "México",
+    "EVS": 61.44
+  },
+  {
+    "Continente": "Oceanía",
+    "Pais": "Micronesia (Estados Federados De)",
+    "EVS": 57.93
+  },
+  {
+    "Continente": "Asia",
+    "Pais": "Mongolia",
+    "EVS": 61.3
+  },
+  {
+    "Continente": "Europa",
+    "Pais": "Montenegro",
+    "EVS": 65.15
+  },
+  {
+    "Continente": "África",
+    "Pais": "Mozambique",
+    "EVS": 49.7
+  },
+  {
+    "Continente": "Asia",
+    "Pais": "Myanmar",
+    "EVS": 59.8
+  },
+  {
+    "Continente": "África",
+    "Pais": "Namibia",
+    "EVS": 52.8
+  },
+  {
+    "Continente": "Asia",
+    "Pais": "Nepal",
+    "EVS": 60.2
+  },
+  {
+    "Continente": "América",
+    "Pais": "Nicaragua",
+    "EVS": 64.61
+  },
+  {
+    "Continente": "África",
+    "Pais": "Níger",
+    "EVS": 52.6
+  },
+  {
+    "Continente": "África",
+    "Pais": "Nigeria",
+    "EVS": 54.9
+  },
+  {
+    "Continente": "Europa",
+    "Pais": "Noruega",
+    "EVS": 71.2
+  },
+  {
+    "Continente": "Oceanía",
+    "Pais": "Nueva Zelandia",
+    "EVS": 69.98
+  },
+  {
+    "Continente": "Asia",
+    "Pais": "Omán",
+    "EVS": 63.19
+  },
+  {
+    "Continente": "Europa",
+    "Pais": "Países Bajos (Reino De Los)",
+    "EVS": 69.97
+  },
+  {
+    "Continente": "Asia",
+    "Pais": "Pakistán",
+    "EVS": 56.9
+  },
+  {
+    "Continente": "América",
+    "Pais": "Panamá",
+    "EVS": 66.74
+  },
+  {
+    "Continente": "Oceanía",
+    "Pais": "Papua Nueva Guinea",
+    "EVS": 57.48
+  },
+  {
+    "Continente": "América",
+    "Pais": "Paraguay",
+    "EVS": 60.9
+  },
+  {
+    "Continente": "América",
+    "Pais": "Perú",
+    "EVS": 62.99
+  },
+  {
+    "Continente": "Europa",
+    "Pais": "Polonia",
+    "EVS": 62.52
+  },
+  {
+    "Continente": "Europa",
+    "Pais": "Portugal",
+    "EVS": 69.5
+  },
+  {
+    "Continente": "Asia",
+    "Pais": "Qatar",
+    "EVS": 66.2
+  },
+  {
+    "Continente": "Europa",
+    "Pais": "Reino Unido De Gran Bretaña E Irlanda Del Norte",
+    "EVS": 68.64
+  },
+  {
+    "Continente": "Asia",
+    "Pais": "República Árabe Siria",
+    "EVS": 62.27
+  },
+  {
+    "Continente": "África",
+    "Pais": "República Centroafricana",
+    "EVS": 45.4
+  },
+  {
+    "Continente": "Asia",
+    "Pais": "República De Corea",
+    "EVS": 72.5
+  },
+  {
+    "Continente": "África",
+    "Pais": "República Democrática Del Congo",
+    "EVS": 53.2
+  },
+  {
+    "Continente": "Asia",
+    "Pais": "República Democrática Popular Lao",
+    "EVS": 60.4
+  },
+  {
+    "Continente": "América",
+    "Pais": "República Dominicana",
+    "EVS": 63.56
+  },
+  {
+    "Continente": "Asia",
+    "Pais": "República Popular Democrática De Corea",
+    "EVS": 64.7
+  },
+  {
+    "Continente": "África",
+    "Pais": "República Unida De Tanzanía",
+    "EVS": 58.1
+  },
+  {
+    "Continente": "Europa",
+    "Pais": "Rumania",
+    "EVS": 63.85
+  },
+  {
+    "Continente": "África",
+    "Pais": "Rwanda",
+    "EVS": 58.7
+  },
+  {
+    "Continente": "Oceanía",
+    "Pais": "Samoa",
+    "EVS": 61.57
+  },
+  {
+    "Continente": "América",
+    "Pais": "San Vicente Y Las Granadinas",
+    "EVS": 62.88
+  },
+  {
+    "Continente": "América",
+    "Pais": "Santa Lucía",
+    "EVS": 61.76
+  },
+  {
+    "Continente": "África",
+    "Pais": "Santo Tomé Y Príncipe",
+    "EVS": 62.4
+  },
+  {
+    "Continente": "África",
+    "Pais": "Senegal",
+    "EVS": 58.9
+  },
+  {
+    "Continente": "Europa",
+    "Pais": "Serbia",
+    "EVS": 63.87
+  },
+  {
+    "Continente": "África",
+    "Pais": "Seychelles",
+    "EVS": 64.72
+  },
+  {
+    "Continente": "África",
+    "Pais": "Sierra Leona",
+    "EVS": 53.1
+  },
+  {
+    "Continente": "Asia",
+    "Pais": "Singapur",
+    "EVS": 73.6
+  },
+  {
+    "Continente": "África",
+    "Pais": "Somalia",
+    "EVS": 47.4
+  },
+  {
+    "Continente": "Asia",
+    "Pais": "Sri Lanka",
+    "EVS": 66.7
+  },
+  {
+    "Continente": "África",
+    "Pais": "Sudáfrica",
+    "EVS": 52.8
+  },
+  {
+    "Continente": "África",
+    "Pais": "Sudán",
+    "EVS": 58.5
+  },
+  {
+    "Continente": "África",
+    "Pais": "Sudán Del Sur",
+    "EVS": 50.5
+  },
+  {
+    "Continente": "Europa",
+    "Pais": "Suecia",
+    "EVS": 71.12
+  },
+  {
+    "Continente": "Europa",
+    "Pais": "Suiza",
+    "EVS": 71.15
+  },
+  {
+    "Continente": "América",
+    "Pais": "Suriname",
+    "EVS": 60.3
+  },
+  {
+    "Continente": "Asia",
+    "Pais": "Tailandia",
+    "EVS": 65.8
+  },
+  {
+    "Continente": "Asia",
+    "Pais": "Tayikistán",
+    "EVS": 63.1
+  },
+  {
+    "Continente": "Asia",
+    "Pais": "Timor-Leste",
+    "EVS": 59.5
+  },
+  {
+    "Continente": "África",
+    "Pais": "Togo (El)",
+    "EVS": 55.8
+  },
+  {
+    "Continente": "Oceanía",
+    "Pais": "Tonga",
+    "EVS": 63.78
+  },
+  {
+    "Continente": "América",
+    "Pais": "Trinidad Y Tabago",
+    "EVS": 61.94
+  },
+  {
+    "Continente": "África",
+    "Pais": "Túnez",
+    "EVS": 63.58
+  },
+  {
+    "Continente": "Europa / Asia",
+    "Pais": "Türkiye",
+    "EVS": 65.21
+  },
+  {
+    "Continente": "Asia",
+    "Pais": "Turkmenistán",
+    "EVS": 60.82
+  },
+  {
+    "Continente": "Europa",
+    "Pais": "Ucrania",
+    "EVS": 61.55
+  },
+  {
+    "Continente": "África",
+    "Pais": "Uganda",
+    "EVS": 57.2
+  },
+  {
+    "Continente": "América",
+    "Pais": "Uruguay",
+    "EVS": 64.99
+  },
+  {
+    "Continente": "Asia",
+    "Pais": "Uzbekistán",
+    "EVS": 63.4
+  },
+  {
+    "Continente": "Oceanía",
+    "Pais": "Vanuatu",
+    "EVS": 58.68
+  },
+  {
+    "Continente": "América",
+    "Pais": "Venezuela (República Bolivariana De)",
+    "EVS": 62.05
+  },
+  {
+    "Continente": "Asia",
+    "Pais": "Viet Nam",
+    "EVS": 65.65
+  },
+  {
+    "Continente": "Asia",
+    "Pais": "Yemen",
+    "EVS": 56.46
+  },
+  {
+    "Continente": "África",
+    "Pais": "Zambia",
+    "EVS": 53.0
+  },
+  {
+    "Continente": "África",
+    "Pais": "Zimbabwe",
+    "EVS": 51.2
+  }
+]
