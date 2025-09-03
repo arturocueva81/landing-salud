@@ -22,17 +22,27 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Setup Node 20
+        id: node
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'pnpm'
 
-      # Instala pnpm globalmente, evitando depender de Corepack
-      - name: Install pnpm globally
+      # Asegura que el bin global de npm esté en PATH y luego instala pnpm
+      - name: Ensure global npm bin on PATH and install pnpm
+        shell: bash
         run: |
+          set -euxo pipefail
+          # Mostrar bin global de npm y añadirlo al PATH del job
+          NPM_BIN=$(npm bin -g)
+          echo "Global npm bin: $NPM_BIN"
+          echo "$NPM_BIN" >> $GITHUB_PATH
+          # Instalar pnpm globalmente
           npm i -g pnpm@9.12.0
-          echo "pnpm path: $(command -v pnpm)"
+          # Verificar pnpm en PATH
+          which pnpm || true
+          command -v pnpm
           pnpm --version
 
       - name: Install dependencies
