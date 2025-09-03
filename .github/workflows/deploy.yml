@@ -22,7 +22,7 @@ jobs:
         with:
           node-version: 20
           package-manager: pnpm
-          # path: .  # si tu proyecto está en la raíz, déjalo por defecto
+          # path: .  # si tu proyecto está en la raíz, puedes omitir
 
   deploy:
     needs: build
