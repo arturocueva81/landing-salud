@@ -28,14 +28,11 @@ jobs:
           node-version: '20'
           cache: 'pnpm'
 
-      # Habilita Corepack (viene con Node 16.13+)
-      - name: Enable Corepack
-        run: corepack enable
-
-      # Asegura que pnpm esté disponible usando la versión de package.json
-      # (corepack preparará pnpm@<version> desde "packageManager")
-      - name: Prepare package manager
-        run: corepack install
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.12.0
+          run_install: false
 
       - name: Show pnpm version (debug)
         run: pnpm --version
