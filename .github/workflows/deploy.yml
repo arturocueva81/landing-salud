@@ -22,8 +22,7 @@ jobs:
         with:
           node-version: 20
           package-manager: pnpm
-          version: 9.12.0     # versión de pnpm a usar en el runner
-          # path: .           # si tu proyecto está en la raíz, déjalo por defecto
+          # path: .  # si tu proyecto está en la raíz, déjalo por defecto
 
   deploy:
     needs: build
