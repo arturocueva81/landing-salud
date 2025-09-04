@@ -89,12 +89,12 @@ body{
 }
 
 /* Fondos por sección */
-#home{        background-image: url('/images/portada.jpg'); }
-#contexto{    background-image: url('/images/introduccion.jpg'); }
-#datos{       background-image: url('/images/introduccion.jpg'); }
-#metodologia{ background-image: url('/images/introduccion.jpg'); }
-#powerbi{     background-image: url('/images/conclusion.jpg'); }
-#acerca{      background-image: url('/images/conclusion.jpg'); }
+#home{        background-image: url('/landing-salud/images/portada.jpg'); }
+#contexto{    background-image: url('/landing-salud/images/introduccion.jpg'); }
+#datos{       background-image: url('/landing-salud/images/introduccion.jpg'); }
+#metodologia{ background-image: url('/landing-salud/images/introduccion.jpg'); }
+#powerbi{     background-image: url('/landing-salud/images/conclusion.jpg'); }
+#acerca{      background-image: url('/landing-salud/images/conclusion.jpg'); }
 
 /* Contenedor de contenido */
 .content{
