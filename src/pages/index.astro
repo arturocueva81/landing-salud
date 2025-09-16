@@ -4,6 +4,7 @@ import '../styles.css';
 
 <html lang="es">
   <head>
+    <link rel="icon" href="/landing-salud/images/favicon.ico" type="image/x-icon">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Egresos Pacientes Ecuador 2024</title>
@@ -41,22 +42,31 @@ import '../styles.css';
                 <div class="intro-text">
                   <h2 class="text-title">Introducción</h2>
                   <p class="text">
-                    Esta visualización sintetiza los Egresos Hospitalarios 2024 en Ecuador para ofrecer un panorama 
-                    rápido y comparativo del uso de los servicios de hospitalización. Un egreso hospitalario es la 
-                    salida de un paciente tras concluir un episodio de hospitalización —ya sea por alta, traslado, 
-                    abandono o defunción— y representa un episodio, no una persona única; por ello, una misma persona 
+                    Es una pregunta que muy pocas personas nos hacemos y un tema muy poco tratado en el núcleo familiar, 
+                    en muchos casos damos por sentado que vamos a vivir muchos años, y no tenemos la suficiente información 
+                    que nos permitan tomar decisiones oportunas que mitiguen efectos negativos en la salud y economía familiar.
+                    Esta visualización busca sintetizar los datos de Egresos Hospitalarios 2024 en Ecuador para ofrecer un panorama 
+                    del uso de los servicios de hospitalización. 
+                  <p class="text">Se considera como egreso hospitalario es la salida de un paciente tras concluir un episodio de hospitalización 
+                    —ya sea por alta, traslado, abandono o defunción— y representa un episodio, no una persona única; por ello, una misma persona 
                     puede registrar varios egresos en el año.
-                    El contenido se organiza en tres ejes principales. Primero, las magnitudes por provincia y su 
-                    distribución entre áreas urbana y rural, asegurando que el total corresponda a la suma de ambas; 
-                    esto permite ubicar dónde se concentra la demanda y reconocer brechas territoriales. 
-                    Segundo, las principales causas de egreso, que ayudan a identificar diagnósticos con mayor carga 
-                    asistencial y orientar acciones clínicas y preventivas. Tercero, la composición por tipo de seguro, 
-                    clave para comprender patrones de acceso y cobertura dentro del sistema de salud.
-                    La utilidad de esta visualización radica en que facilita la planificación de recursos 
-                    (camas, personal e insumos) y la priorización de intervenciones, a la vez que mejora la lectura 
-                    comparativa mediante gráficos claros, etiquetas legibles y opciones de interacción. 
-                    Se sugiere comenzar por el panorama provincial (Total, Urbana y Rural) y luego explorar causas y seguros, 
-                    interpretando los resultados junto con la población y la oferta de servicios para lograr un análisis equilibrado.
+                    El contenido se organiza en los siguientes ejes:</p>
+                  <p class="text">
+                    <ul> 
+                  <li> Magnitudes por provincia y su distribución entre áreas urbana y rural, asegurando que el total corresponda a la suma de ambas; 
+                    esto permite ubicar dónde se concentra la demanda y reconocer brechas territoriales. </li>
+                  <li> Principales causas de egreso, que ayudan a identificar diagnósticos con mayor carga 
+                    asistencial y orientar acciones clínicas y preventivas.</li> 
+                  <li> Composición por tipo de seguro, clave para comprender patrones de acceso y cobertura dentro del sistema de salud.</li>
+                  <li> Mención breve de costos mas representativos por enfermedad y hospitalización.</li>
+                  </ul>
+                  </p>
+                  <p class="text"> El objetivo de este trabajo de investigación es evidenciar el impacto de los costos por enfermedad 
+                    y que esto permita priorizar recursos, dimensionar el impacto económico y orientar políticas de prevención 
+                    y tratamiento más costo-efectivas. Además, se presenta este trabajo como herramienta que permita facilitar la toma de 
+                    decisiones a las autoridades involucradas que permitan optimizar los diferentes procesos públicos y privados para mejorar la atención 
+                    de los pacientes en el Ecuador.
+                    </p>
                   </p>
                 </div>
 
@@ -74,7 +84,7 @@ import '../styles.css';
               <div class="placeholder">Gráfico Contexto 1</div>
               <div class="inner-glow"></div>
             </div>
-            <div class="chart-source">Fuente: fuente de datos1</div>
+            <div class="chart-source">Fuente: https://data.who.int/es/indicators/i/48D9B0C/C64284D</div>
           </div>
           <div class="text-col">
             <h2 class="text-title">Panorama global de EVS</h2>
@@ -104,7 +114,7 @@ import '../styles.css';
               <div class="placeholder">Gráfico Contexto 2</div>
               <div class="inner-glow"></div>
             </div>
-            <div class="chart-source">Fuente: fuente de datos1</div>
+            <div class="chart-source">Fuente: https://data.who.int/es/indicators/i/48D9B0C/C64284D</div>
           </div>
           <div class="text-col">
             <h2 class="text-title">Tendencias históricas de EVS en Ecuador</h2>
@@ -139,7 +149,7 @@ import '../styles.css';
               <div class="placeholder">Cargando gráfico…</div>
               <div class="inner-glow"></div>
             </div>
-            <div class="chart-source">Fuente: fuente de datos1</div>
+            <div class="chart-source">Fuente: https://www.ecuadorencifras.gob.ec/camas-y-egresos-hospitalarios/</div>
           </div>
           <div class="text-col">
             <h2 class="text-title">Cobertura de seguro de salud</h2>
@@ -152,11 +162,11 @@ import '../styles.css';
               <!-- Mixto: porcentaje y número -->
               <div class="counter-wrap">
                 <span class="counter-value" data-target="61,31%" data-decimals="2">0</span>
-                <div class="counter-subtitle">Egresos que No Tienen Seguro</div>
+                <div class="counter-subtitle">No Tienen Seguro</div>
               </div>
               <div class="counter-wrap">
                 <span class="counter-value" data-target="5,53%" data-decimals="2">0</span>
-                <div class="counter-subtitle">Egresos que cuentan con un Seguro Privado</div>
+                <div class="counter-subtitle">Tienen con un Seguro Privado</div>
               </div>
             </div>
           </div>
@@ -208,7 +218,7 @@ import '../styles.css';
             <div class="chart-container liquid-glass full-bleed" id="chart-datos-2" aria-label="Egresos por provincia (barras)" style="min-height:760px;">
               <div class="inner-glow"></div>
             </div>
-            <div class="chart-source">Fuente: egresos_prov_canton_parroquia_area.json</div>
+            <div class="chart-source">Fuente: https://www.ecuadorencifras.gob.ec/camas-y-egresos-hospitalarios/</div>
           </div>
         </div>
 
@@ -218,7 +228,7 @@ import '../styles.css';
               <div class="placeholder">Gráfico 3</div>
               <div class="inner-glow"></div>
             </div>
-            <div class="chart-source">Fuente: fuente de datos1</div>
+            <div class="chart-source">Fuente: https://datosabiertos.gob.ec/dataset/registro-estadistico-de-egresos-hospitalarios-2024</div>
           </div>
           <div class="text-col">
             <h2 class="text-title">Principales causas de egreso</h2>
@@ -230,15 +240,81 @@ import '../styles.css';
             <div class="counter-group">
               <div class="counter-wrap">
                 <span class="counter-value" data-target="242769" data-decimals="0">0</span>
-                <div class="counter-subtitle">MUJERES: Maternindad y embarazo</div>
+                <div class="counter-subtitle">MUJERES: Maternidad </div>
               </div>
               <div class="counter-wrap">
                 <span class="counter-value" data-target="89336" data-decimals="0">0</span>
-                <div class="counter-subtitle">HOMBRES: Traumatismos/Envenenamiento</div>
+                <div class="counter-subtitle">HOMBRES: Traumatismos</div>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- NUEVOS CONTENEDORES DE IMAGEN -->
+
+        <!-- Contenedor 1: Texto + contador (izquierda) | Imagen (derecha) -->
+        <section class="data-card liquid-glass">
+          <div class="data-card__grid">
+            <div class="data-card__content">
+              <h3>Costos por Enfermedad</h3>
+              <p>
+                El costo por enfermedad se refiere al conjunto de gastos que una patología genera en la sociedad, 
+                abarca costos directos como indirectos. Se considera como costos directos la atención médica (consultas, hospitalizaciones, 
+                medicamentos, exámenes y otros insumos), mientras que los costos indirectos se relacionan con la pérdida de productividad 
+                por ausencias laborales, discapacidad o muerte prematura, así como el tiempo que dedican los cuidadores. 
+                En algunos análisis también se incorporan costos intangibles, como el dolor, el sufrimiento y la disminución 
+                de la calidad de vida. Por ejemplo: 
+                <ul>
+                  <li>Control básico para la diabetes es: $ 50 </li>
+                  <li>Control hipertensión: $ 40</li>
+                  <li>Resfriado común: $ 15</li>            
+                </ul>
+              </p>
+              <div class="counter">
+                <span class="counter__label">Costo de un tratamiento ambulatorio de dengue</span>
+                <span class="counter__value" data-target="12000" data-prefix="$" data-suffix="">$ 498</span>
+              </div>
+            </div>
+            <div class="data-card__media">
+              <img src="/landing-salud/images/costo_enf.jpg" alt="Costo por enfermedad" loading="lazy" />
+              <div class="chart-source">Fuente: fuente de datos1</div>
+            </div>
+          </div>
+          <div class="inner-glow"></div>
+        </section>
+
+        <!-- Contenedor 2: Imagen (izquierda) | Texto + contador (derecha) -->
+        <section class="data-card liquid-glass">
+          <div class="data-card__grid data-card__grid--invert">
+            <div class="data-card__media">
+              <img src="/landing-salud/images/hospit.jpg" alt="Hospitalización" loading="lazy" />
+              <div class="chart-source">Fuente: fuente de datos1</div>
+            </div>
+            <div class="data-card__content">
+              <h3>Costos de Hospitalización</h3>
+              <p>
+                Son los gastos asociados a la atención de un paciente durante su estancia en un hospital. 
+                Incluyen costos directos como alojamiento en cama, honorarios médicos y de enfermería, procedimientos, cirugías, 
+                medicamentos, exámenes de laboratorio e imagen, insumos y uso de quirófano o UCI; así como costos indirectos 
+                relacionados con administración, mantenimiento, limpieza, alimentación, etc. 
+                Según el enfoque, también puede considerarse el costo social por pérdida de productividad del paciente y sus cuidadores. 
+                Estos costos sirven para presupuestar, fijar tarifas, evaluar eficiencia y planificar recursos. Así tenemos algunos ejemplos: 
+                <ul>
+                  <li>Infarto agudo de miocardio: $ 8000</li>
+                  <li>Cirugía traumatológica: $ 6000</li>
+                  <li>Costo de parto (cesárea): $ 2500 </li>
+                </ul>
+              </p>
+              <div class="counter">
+                <span class="counter__label">Tratamiento de Cáncer:</span>
+                <span class="counter__value" data-target="8000" data-prefix="$" data-suffix=""> $ 12000</span>
+              </div>
+            </div>
+          </div>
+          <div class="inner-glow"></div>
+        </section>
+
+        <!-- FIN NUEVOS CONTENEDORES -->
 
       </div>
     </section>
@@ -256,16 +332,22 @@ import '../styles.css';
         <div class="text-col">
           <h1 class="section-label">Metodología</h1>
           <h2 class="text-title">Cómo construimos los indicadores</h2>
-          <p class="text">El proceso de recopilacion y procesamiento de datos fue el siguiente:</p>
+          <p class="text">Para realizar el estudio se utilizó la metodología de Análisis Exploratorio de Datos (EDA), la misma que consta de los siguientes ciclos iterativos: </p>
             <ul>
-              <li><strong>Definición y alcance:</strong> precisamos cada indicador (p. ej., egresos, EVS, cobertura) y su unidad de medida.</li>
-              <li><strong>Fuentes de datos:</strong> utilizamos registros administrativos y censos/encuestas oficiales; documentamos fecha de corte y calidad.</li>
-              <li><strong>Limpieza y preparación:</strong> estandarizamos nombres (provincias/áreas), tratamos valores faltantes y atípicos, y unificamos formatos numéricos.</li>
-              <li><strong>Cálculo:</strong> aplicamos fórmulas consistentes (tasas por 100.000 hab., proporciones, promedios ponderados). Para EVS usamos series históricas por sexo.</li>
-              <li><strong>Desagregación:</strong> generamos vistas por provincia y área (Urbana/Rural), y cuando es pertinente por sexo y grupo etario.</li>
-              <li><strong>Validación:</strong> verificamos que Total = Urbana + Rural y que los totales provinciales coincidan con agregados nacionales.</li>
-              <li><strong>Visualización:</strong> elegimos gráficos adecuados (barras, pie, líneas, mapas), añadimos etiquetas legibles y porcentajes para facilitar interpretación.</li>
-              <li><strong>Documentación y reproducibilidad:</strong> registramos supuestos, versiones de datos y scripts para asegurar transparencia y replicabilidad.</li>
+              <li><strong>Obtencion de datos:</strong> Consiste en la recolección de información desde fuentes confiables 
+                (bases administrativas, encuestas, APIs, archivos CSV/Excel), se verifican permisos de acceso, alcance temporal y variables relevantes. 
+                Se registra el origen y formato para asegurar trazabilidad</li>
+              <li><strong>Exploración:</strong> Es la revisión inicial para comprender la estructura, tipos de variables y distribución básica. Se detectan valores faltantes, 
+                atípicos y posibles inconsistencias; se generan estadísticas descriptivas y primeras visualizaciones rápidas</li>
+              <li><strong>Limpieza:</strong>Corrección de datos (tipos, nombres, unidades), tratamiento de nulos, 
+                control de registros duplicados y resolver inconsistencias. Se documentan todas las transformaciones para garantizar reproducibilidad 
+              </li>
+              <li><strong>Análisis de datos:</strong> Aplicación de métodos que permitan responder preguntas y descubrir patrones, relaciones y tendencias relevantes.</li>
+              <li><strong>Visualización de datos:</strong> Comunicar hallazgos con gráficos claros y adecuados al tipo de dato (barras, líneas, mapas, boxplots), 
+                cuidando la legibilidad, contexto y mensajes clave.</li>
+              <li><strong>Visualización:</strong> Elegimos gráficos adecuados (barras, pie, líneas, mapas), añadimos etiquetas legibles y porcentajes para facilitar interpretación.</li>
+              <li><strong>Documentación:</strong> Registrar fuentes, versiones, decisiones metodológicas, scripts y resultados. 
+                Busca facilitar procesos de auditoría, replicación, mantenimiento y escalabilidad del proyecto, además de servir como base para reportes y tableros.</li>
             </ul>
           <div class="counter-wrap">
             <span class="counter-value" data-target="1132667" data-decimals="0">0</span>
@@ -280,7 +362,7 @@ import '../styles.css';
       <div class="content two-col fullwidth">
         <div class="viz-col">
           <div class="qr-container">
-            <img src="/landing-salud/images/qr_final.jpg" alt="Código QR Power BI" class="qr-image" />
+            <img src="/landing-salud/images/QR_PBI.svg" alt="Código QR Power BI" class="qr-image" />
           </div>
           <div class="chart-source">Fuente: fuente de datos1</div>
         </div>
@@ -305,24 +387,24 @@ import '../styles.css';
         <div class="team-grid">
           <div class="team-card">
             <div class="avatar-ring">
-              <img src="/landing-salud/images/avatar1.jpg" alt="Avatar Nombre1" class="avatar-img" />
+              <img src="/landing-salud/images/ft_Leo.jpg" alt="Avatar Nombre1" class="avatar-img" />
             </div>
             <div class="team-name">Leonardo Gualotuña</div>
-            <div class="team-role">Prof1</div>
+            <div class="team-role">Analista de Datos</div>
           </div>
           <div class="team-card">
             <div class="avatar-ring">
               <img src="/landing-salud/images/avatar2.jpg" alt="Avatar Nombre2" class="avatar-img" />
             </div>
             <div class="team-name">Matías Fonseca</div>
-            <div class="team-role">Prof2</div>
+            <div class="team-role">Analista de Datos</div>
           </div>
           <div class="team-card">
             <div class="avatar-ring">
-              <img src="/landing-salud/images/avatar3.jpg" alt="Avatar Nombre3" class="avatar-img" />
+              <img src="/landing-salud/images/ft_ac.png" alt="Avatar Nombre1" class="avatar-img" />
             </div>
             <div class="team-name">Arturo Cueva</div>
-            <div class="team-role">Prof3</div>
+            <div class="team-role">Analista de Datos</div>
           </div>
         </div>
       </div>
@@ -332,7 +414,7 @@ import '../styles.css';
       <div class="footer-wrap">
         <div class="footer-brand">Análisis Egresos Hospitalarios - Ecuador 2024</div>
         <div class="footer-right">
-          <span>&copy; {new Date().getFullYear()} Todos los derechos reservados</span>
+          <span>&copy; {new Date().getFullYear()} KRUGER Instituto Exponencial - Todos los derechos reservados</span>
         </div>
       </div>
     </footer>
@@ -727,9 +809,66 @@ import '../styles.css';
 
       .btn-row .seg-btn { font-size:14px; }
 
-      @media (min-width: 992px) {
-        .fullwidth-card-body { padding: 22px 26px; }
+      /* NUEVO: Cards 2 columnas + Liquid Glass */
+      .data-card {
+        position: relative;
+        margin: 18px 0;
+        border-radius: 16px;
+        overflow: hidden;
+        background: rgba(255,255,255,0.42);
+        backdrop-filter: blur(10px) saturate(120%);
+        -webkit-backdrop-filter: blur(10px) saturate(120%);
+        border: 1px solid rgba(148,163,184,0.25);
+        box-shadow: 0 10px 30px rgba(2,6,23,0.15), inset 0 1px 0 rgba(255,255,255,0.4);
       }
+      .data-card::before {
+        content: '';
+        position: absolute;
+        inset: -1px;
+        background: radial-gradient(800px 400px at var(--glow-x,50%) var(--glow-y,50%), rgba(59,130,246,0.18), rgba(59,130,246,0) 60%);
+        pointer-events: none;
+        opacity: .9;
+        transition: opacity 180ms ease;
+      }
+      .data-card .inner-glow {
+        position: absolute; inset: 0;
+        background: radial-gradient(600px 300px at var(--glow-x,50%) var(--glow-y,50%), rgba(255,255,255,0.35), rgba(255,255,255,0) 60%);
+        mix-blend-mode: overlay; pointer-events: none;
+      }
+      .data-card__grid {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 24px;
+        align-items: center;
+        padding: 22px;
+      }
+      .data-card__grid--invert { grid-template-columns: 0.9fr 1.1fr; }
+      .data-card__content h3 { margin: 0 0 10px 0; font-size: 1.25rem; }
+      .data-card__content p { margin: 0 0 14px 0; line-height: 1.6; }
+      .data-card__media img {
+        width: 100%; height: auto; display: block; border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.12); object-fit: cover;
+      }
+
+      /* Contadores nuevos (card) */
+      .counter {
+        display: inline-flex; align-items: baseline; gap: 10px;
+        margin-top: 6px; padding: 10px 14px; border-radius: 12px;
+        background: rgba(255,255,255,0.45);
+        border: 1px solid rgba(255,255,255,0.5);
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+        backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+      }
+      .counter__label { font-size: 0.95rem; opacity: 0.8; }
+      .counter__value { font-weight: 700; font-size: 1.6rem; color: #1e3a8a; }
+
+      @media (max-width: 1024px) {
+        .data-card__grid, .data-card__grid.data-card__grid--invert { grid-template-columns: 1fr; }
+        .data-card__media img { max-height: 340px; object-fit: cover; }
+      }
+
+      
     </style>
   </body>
 </html>

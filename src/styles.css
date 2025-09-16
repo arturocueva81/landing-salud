@@ -344,3 +344,180 @@ a:focus-visible, button:focus-visible{ outline: 3px solid #93c5fd; outline-offse
   .chart-container{ min-height: 190px; padding: 4px; border-radius: 10px; }
   #chart-contexto-1, #chart-contexto-2{ min-height: 210px; }
 }
+
+/* ====== Liquid Glass Base ====== */
+.liquid-glass {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.42);
+  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  box-shadow:
+    0 10px 30px rgba(2, 6, 23, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.liquid-glass::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background:
+    radial-gradient(800px 400px at var(--glow-x, 50%) var(--glow-y, 50%),
+      rgba(59, 130, 246, 0.18),
+      rgba(59, 130, 246, 0) 60%);
+  pointer-events: none;
+  opacity: 0.9;
+  transition: opacity 180ms ease;
+}
+
+.liquid-glass .inner-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(600px 300px at var(--glow-x, 50%) var(--glow-y, 50%),
+      rgba(255, 255, 255, 0.35),
+      rgba(255, 255, 255, 0) 60%);
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+/* Opcional: animación sutil del brillo en reposo */
+@keyframes lg-ambient {
+  0%   { --glow-x: 40%; --glow-y: 50%; }
+  50%  { --glow-x: 60%; --glow-y: 55%; }
+  100% { --glow-x: 40%; --glow-y: 50%; }
+}
+.liquid-glass {
+  animation: lg-ambient 12s ease-in-out infinite;
+}
+
+/* Para tarjetas de contenido 2 columnas */
+.data-card {
+  margin: 18px 0;
+}
+.data-card__grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 24px;
+  align-items: center;
+  padding: 22px;
+}
+.data-card__grid--invert {
+  grid-template-columns: 0.9fr 1.1fr;
+}
+.data-card__media img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+.data-card__content h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.25rem;
+}
+
+/* Contenedores de gráfico */
+.chart-container {
+  position: relative;
+  min-height: 360px;
+  padding: 10px;
+}
+
+/* ====== Contador ascendente (estilos visuales) ====== */
+.counter-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 16px;
+  align-items: stretch;
+  margin-top: 8px;
+}
+.counter-wrap {
+  display: grid;
+  gap: 4px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  min-width: 180px;
+}
+.counter-value,
+.counter__value {
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #1e3a8a;
+  line-height: 1.1;
+}
+.counter-subtitle,
+.counter__label {
+  font-size: 0.95rem;
+  color: #0b1220;
+  opacity: 0.85;
+}
+
+/* Variante compacta para contadores “en línea” dentro de tarjetas */
+.counter {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-top: 6px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* ====== Justificación global del texto ======
+   Aplica justificado a todos los párrafos y elementos con clase .text
+   Puedes limitar el alcance a secciones si lo prefieres. */
+p,
+.text,
+.data-card__content p,
+.text-col p,
+.intro-text p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* Opcional: justificar listas también */
+.text-col li,
+.data-card__content li {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* Títulos se mantienen alineados a la izquierda por legibilidad */
+h1, h2, h3, h4, h5, h6 {
+  text-align: left;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 1024px) {
+  .data-card__grid,
+  .data-card__grid.data-card__grid--invert {
+    grid-template-columns: 1fr;
+  }
+  .data-card__media img {
+    max-height: 340px;
+    object-fit: cover;
+  }
+}
+@media (max-width: 640px) {
+  .counter-value,
+  .counter__value {
+    font-size: 1.35rem;
+  }
+  .counter-wrap {
+    min-width: 150px;
+  }
+}
