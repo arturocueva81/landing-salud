@@ -521,3 +521,50 @@ h1, h2, h3, h4, h5, h6 {
     min-width: 150px;
   }
 }
+
+/* Portada: efecto de aparecimiento MUY lento del título */
+#home .title {
+  opacity: 0;
+  transform: translateY(22px) scale(0.982);
+  filter: blur(4px);
+  transition:
+    opacity 2200ms cubic-bezier(.22,.61,.36,1) 300ms,
+    transform 2200ms cubic-bezier(.22,.61,.36,1) 300ms,
+    filter 2200ms cubic-bezier(.22,.61,.36,1) 300ms;
+  will-change: opacity, transform, filter;
+}
+
+/* Al volverse visible la sección */
+.section.is-visible#home .title,
+#home .title.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+/* Animación inicial al cargar (muy lenta + delay) */
+@keyframes heroFadeInUltra {
+  0%   { opacity: 0; transform: translateY(26px) scale(0.978); filter: blur(5px); }
+  35%  { opacity: .45; transform: translateY(14px) scale(0.988); filter: blur(3px); }
+  70%  { opacity: 1; transform: translateY(4px)  scale(1);      filter: blur(1px); }
+  100% { opacity: 1; transform: none; filter: none; }
+}
+#home .title.animate-on-load {
+  animation: heroFadeInUltra 2400ms cubic-bezier(.22,.61,.36,1) forwards;
+  animation-delay: 350ms;
+}
+
+/* Subtítulo y CTA: también más lentos y con mayor delay */
+#home .subtitle,
+#home .cta-row {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 2000ms cubic-bezier(.22,.61,.36,1) 400ms,
+    transform 2000ms cubic-bezier(.22,.61,.36,1) 400ms;
+}
+.section.is-visible#home .subtitle,
+.section.is-visible#home .cta-row {
+  opacity: 1;
+  transform: translateY(0);
+}
