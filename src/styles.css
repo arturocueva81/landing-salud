@@ -10,6 +10,9 @@
   --gutter-lg: 22px;
 
   --text-shadow: 0 1px 2px rgba(0,0,0,0.22);
+
+  /* Safe area iOS */
+  --safe-top: env(safe-area-inset-top, 0px);
 }
 
 /* Reset y base (evita franja arriba) */
@@ -24,7 +27,7 @@ body{
   font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
   color: var(--text);
   overflow-x: hidden;
-  padding-top: var(--nav-h);            /* compensa header fijo */
+  padding-top: calc(var(--nav-h) + var(--safe-top)); /* compensa header fijo + notch */
 }
 body > :first-child { margin-top: 0 !important; }
 
@@ -41,8 +44,9 @@ img, svg, video { max-width: 100%; height: auto; display: block; }
 /* Header / Nav (sin franja blanca superior) */
 .site-header{
   position: fixed; top: 0; left: 0; right: 0;   /* fixed evita saltos y franjas */
-  height: var(--nav-h);
+  height: calc(var(--nav-h) + var(--safe-top));
   margin: 0 !important; padding: 0 !important;  /* sin margen/padding */
+  padding-top: max(0px, var(--safe-top));
   background: var(--brand);
   color: #fff;
   border: 0; border-bottom: 1px solid rgba(255,255,255,0.14);
@@ -189,25 +193,35 @@ img, svg, video { max-width: 100%; height: auto; display: block; }
 .fullwidth-card-body{ padding: 12px 14px; }
 .row-full{ grid-column: 1 / -1; width: 100%; }
 
-/* Contenedores de gráficos */
+/* ===== Unificación: Contenedores de gráficos (mobile-first, estables) ===== */
 .chart-container{
   position: relative; width: 100%;
-  min-height: 200px;
+  min-height: 220px;                /* baseline seguro para móviles */
   background: rgba(255,255,255,0.95);
   border: 1px solid rgba(0,0,0,0.06);
   border-radius: 10px;
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), 0 6px 16px rgba(0,0,0,0.10);
   overflow: hidden;
-  padding: 4px;
+  padding: 8px;
 }
-@media (min-width: 640px){ .chart-container{ min-height: 240px; } }
-@media (min-width: 1024px){ .chart-container{ min-height: 300px; padding: 6px; border-radius: 12px; } }
-.chart-container > *{ min-height: 1px; }
+.chart-container > *{ min-height: 1px; } /* evita colapso del hijo */
 
-/* IDs para Contexto 1 y 2 */
-#chart-contexto-1, #chart-contexto-2{ min-height: 210px; }
-@media (min-width: 640px){ #chart-contexto-1, #chart-contexto-2{ min-height: 250px; } }
+@media (min-width: 640px){ .chart-container{ min-height: 260px; } }
+@media (min-width: 1024px){ .chart-container{ min-height: 320px; padding: 10px; border-radius: 12px; } }
+
+/* IDs para Contexto 1 y 2 (no conflictivos con lo anterior) */
+#chart-contexto-1, #chart-contexto-2{ min-height: 230px; }
+@media (min-width: 640px){ #chart-contexto-1, #chart-contexto-2{ min-height: 260px; } }
 @media (min-width: 1024px){ #chart-contexto-1, #chart-contexto-2{ min-height: 320px; } }
+
+/* Alturas adicionales por sección (ajustadas) */
+#contexto .chart-container{ min-height: 260px; }
+@media (min-width: 768px){ #contexto .chart-container{ min-height: 320px; } }
+@media (min-width: 1024px){ #contexto .chart-container{ min-height: 360px; } }
+
+#chart-datos-2{ min-height: 420px; }
+@media (min-width: 768px){ #chart-datos-2{ min-height: 560px; } }
+@media (min-width: 1024px){ #chart-datos-2{ min-height: 660px; } }
 
 /* Placeholder */
 .placeholder{ display: grid; place-items: center; height: 100%; color: #334155; font-weight: 700; opacity: 0.8; }
@@ -223,17 +237,12 @@ img, svg, video { max-width: 100%; height: auto; display: block; }
 }
 #datos .chart-container.liquid-glass:hover{ transform: translateY(-1px); }
 @media (max-width: 640px){
-  #datos .chart-container.liquid-glass{ backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+  #datos .chart-container.liquid-glass{
+    backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
+    background: rgba(255,255,255,0.94);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.5);
+  }
 }
-
-/* Alturas adicionales */
-#contexto .chart-container{ min-height: 240px; }
-@media (min-width: 768px){ #contexto .chart-container{ min-height: 320px; } }
-@media (min-width: 1024px){ #contexto .chart-container{ min-height: 360px; } }
-
-#chart-datos-2{ min-height: 420px; }
-@media (min-width: 768px){ #chart-datos-2{ min-height: 560px; } }
-@media (min-width: 1024px){ #chart-datos-2{ min-height: 660px; } }
 
 /* Intro two-col (texto/imagen) */
 .intro-two-col{
@@ -261,7 +270,10 @@ img, svg, video { max-width: 100%; height: auto; display: block; }
   background: rgba(255,255,255,0.9);
   border: 1px solid rgba(0,0,0,0.06); border-radius: 10px;
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.45), 0 5px 14px rgba(0,0,0,0.08);
+  min-height: 72px;
 }
+@media (max-width: 640px){ .counter-wrap{ min-height: 64px; } }
+
 .counter-value{
   font-size: clamp(1.05rem, 3.6vw, 1.8rem);
   font-weight: 800; color: var(--brand); letter-spacing: -0.02em;
@@ -299,7 +311,7 @@ img, svg, video { max-width: 100%; height: auto; display: block; }
 .team-role{ color: #6b778c; font-size: 0.85rem; }
 
 /* Figures/Images para charts */
-.chart-figure{ margin: 0; }
+.chart-figure{ margin: 0; min-height: 2px; }
 .chart-img{ width: 100%; height: 100%; object-fit: contain; display: block; border-radius: 8px; }
 
 /* Footer */
@@ -358,7 +370,6 @@ a:focus-visible, button:focus-visible{ outline: 3px solid #93c5fd; outline-offse
     0 10px 30px rgba(2, 6, 23, 0.15),
     inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
-
 .liquid-glass::before {
   content: '';
   position: absolute;
@@ -371,7 +382,6 @@ a:focus-visible, button:focus-visible{ outline: 3px solid #93c5fd; outline-offse
   opacity: 0.9;
   transition: opacity 180ms ease;
 }
-
 .liquid-glass .inner-glow {
   position: absolute;
   inset: 0;
@@ -382,7 +392,6 @@ a:focus-visible, button:focus-visible{ outline: 3px solid #93c5fd; outline-offse
   mix-blend-mode: overlay;
   pointer-events: none;
 }
-
 /* Opcional: animación sutil del brillo en reposo */
 @keyframes lg-ambient {
   0%   { --glow-x: 40%; --glow-y: 50%; }
@@ -419,13 +428,6 @@ a:focus-visible, button:focus-visible{ outline: 3px solid #93c5fd; outline-offse
 .data-card__content h3 {
   margin: 0 0 10px 0;
   font-size: 1.25rem;
-}
-
-/* Contenedores de gráfico */
-.chart-container {
-  position: relative;
-  min-height: 360px;
-  padding: 10px;
 }
 
 /* ====== Contador ascendente (estilos visuales) ====== */
@@ -477,9 +479,7 @@ a:focus-visible, button:focus-visible{ outline: 3px solid #93c5fd; outline-offse
   -webkit-backdrop-filter: blur(6px);
 }
 
-/* ====== Justificación global del texto ======
-   Aplica justificado a todos los párrafos y elementos con clase .text
-   Puedes limitar el alcance a secciones si lo prefieres. */
+/* ====== Justificación global del texto ====== */
 p,
 .text,
 .data-card__content p,
@@ -488,20 +488,18 @@ p,
   text-align: justify;
   text-justify: inter-word;
 }
-
 /* Opcional: justificar listas también */
 .text-col li,
 .data-card__content li {
   text-align: justify;
   text-justify: inter-word;
 }
-
 /* Títulos se mantienen alineados a la izquierda por legibilidad */
 h1, h2, h3, h4, h5, h6 {
   text-align: left;
 }
 
-/* Ajustes responsivos */
+/* Ajustes responsivos de data-card */
 @media (max-width: 1024px) {
   .data-card__grid,
   .data-card__grid.data-card__grid--invert {
@@ -568,3 +566,51 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ===== Optimizaciones móviles adicionales ===== */
+
+/* Desactivar filtros costosos en móviles (bg y glass) */
+@media (max-width: 640px) {
+  .bg-image { filter: grayscale(0%) contrast(100%) brightness(100%); }
+  .bg-image::before {
+    background: rgba(255,255,255,0.4);
+    backdrop-filter: none; 
+    -webkit-backdrop-filter: none;
+  }
+
+  .liquid-glass,
+  .counter-wrap,
+  .counter {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(255,255,255,0.94);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.5);
+  }
+
+  /* Simplificar animaciones en home para no bloquear pintura inicial */
+  #home .title,
+  #home .subtitle,
+  #home .cta-row {
+    transition-duration: 900ms !important;
+    filter: none !important;
+  }
+  #home .title.animate-on-load {
+    animation-duration: 1000ms !important;
+  }
+}
+
+.link-with-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.link-with-icon img {
+  width: 18px; /* ajusta tamaño */
+  height: 18px;
+  object-fit: contain;
+  display: inline-block;
+}
+
+.link-with-icon:hover img { filter: brightness(0) saturate(100%) invert(23%) sepia(88%) saturate(2137%) hue-rotate(206deg) brightness(96%) contrast(95%); }
